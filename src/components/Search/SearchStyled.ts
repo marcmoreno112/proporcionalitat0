@@ -12,6 +12,10 @@ const SearchStyled = styled.form`
     border-radius: 8px;
     color: white;
     font-size: 1.2rem;
+
+    &::placeholder {
+      color: #cabfbf;
+    }
   }
 `;
 

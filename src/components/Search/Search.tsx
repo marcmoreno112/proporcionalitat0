@@ -9,6 +9,7 @@ const Search = (): React.ReactElement => {
         id="search"
         autoComplete="off"
         className="input"
+        placeholder="Type a part of the film title"
       />
     </SearchStyled>
   );

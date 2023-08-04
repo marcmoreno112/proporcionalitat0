@@ -6,6 +6,7 @@ const SearchPageStyled = styled.main`
 
   .page-title {
     font-size: 1.8rem;
+    color: ${(props) => props.theme.colors.primary};
     padding-bottom: 30px;
   }
 `;

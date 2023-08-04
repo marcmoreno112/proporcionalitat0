@@ -9,8 +9,8 @@ interface CardListProps {
 const CardList = ({ films }: CardListProps): React.ReactElement => {
   return (
     <CardListStyled>
-      {films.map((film, index) => (
-        <Card film={film} key={index}></Card>
+      {films.map((film) => (
+        <Card film={film} key={film.id}></Card>
       ))}
     </CardListStyled>
   );

@@ -13,9 +13,17 @@ const Card = ({
 }: CardProps): React.ReactElement => {
   return (
     <CardStyled>
-      <h2>{filmTitle}</h2>
-      <img alt={filmTitle} src={posterUrl} width={300} height={450} />
+      <div className="card-title-container">
+        <h2 className="card-title">{filmTitle}</h2>
+      </div>
       <h3>{releaseDate}</h3>
+      <img
+        alt={filmTitle}
+        src={posterUrl}
+        width={300}
+        height={450}
+        className="card-image"
+      />
     </CardStyled>
   );
 };

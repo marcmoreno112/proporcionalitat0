@@ -3,7 +3,7 @@ import HeaderStyled from "./HeaderStyled";
 const Header = (): React.ReactElement => {
   return (
     <HeaderStyled>
-      <img alt="Films logo" src="/images/logo.svg" />
+      <img alt="Films logo" src="/images/logo.svg" className="logo" />
     </HeaderStyled>
   );
 };

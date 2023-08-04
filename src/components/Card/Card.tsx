@@ -1,11 +1,13 @@
 import { FilmData } from "../../types";
 import CardStyled from "./CardStyled";
 
+interface CardProps {
+  film: FilmData;
+}
+
 const Card = ({
-  posterUrl,
-  filmTitle,
-  releaseDate,
-}: FilmData): React.ReactElement => {
+  film: { filmTitle, posterUrl, releaseDate },
+}: CardProps): React.ReactElement => {
   return (
     <CardStyled>
       <div className="card-title-container">

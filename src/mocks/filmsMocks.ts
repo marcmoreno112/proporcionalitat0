@@ -18,3 +18,5 @@ export const filmsMock: FilmData[] = [
     id: 2,
   },
 ];
+
+export const mockTitleText = "Super Mario";

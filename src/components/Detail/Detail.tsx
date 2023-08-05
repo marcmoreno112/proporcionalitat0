@@ -8,7 +8,7 @@ import Button from "../Button/Button";
 interface DetailProps {
   film: FilmData;
   closeAction: () => void;
-  submitAction: () => void;
+  sendAction: () => void;
 }
 
 const Detail = ({
@@ -18,7 +18,7 @@ const Detail = ({
     release_date: releaseDate,
   },
   closeAction,
-  submitAction,
+  sendAction,
 }: DetailProps): React.ReactElement => {
   const imageUrl = `${imagesUrl}${posterPath}`;
 
@@ -38,6 +38,22 @@ const Detail = ({
     const commentText = event.target.value;
 
     setCommentValue(commentText);
+  };
+
+  const actionOnCloseButton = () => {
+    closeAction();
+
+    setSelectedValue("");
+
+    setCommentValue("");
+  };
+
+  const actionOnSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    sendAction();
+
+    actionOnCloseButton();
   };
 
   return (
@@ -65,7 +81,7 @@ const Detail = ({
       <section className="detail-sections">
         <div className="close-button-container">
           <Button
-            actionOnClick={closeAction}
+            actionOnClick={actionOnCloseButton}
             text="Close"
             className="close-button"
           />
@@ -77,7 +93,7 @@ const Detail = ({
 
         <h3>{releaseDate}</h3>
 
-        <form className="detail-form">
+        <form className="detail-form" onSubmit={actionOnSubmit}>
           <select
             name="rating"
             id="rating"
@@ -110,11 +126,7 @@ const Detail = ({
             onChange={handleCommentChange}
           />
 
-          <Button
-            actionOnClick={submitAction}
-            text="Save"
-            className="save-button"
-          />
+          <Button type="submit" text="Save" className="save-button" />
         </form>
       </section>
     </DetailStyled>

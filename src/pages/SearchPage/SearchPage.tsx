@@ -12,6 +12,8 @@ const SearchPage = (): React.ReactElement => {
 
   const [films, setFilms] = useState<FilmData[]>([]);
 
+  const [searchNotFound, setSearchNotFound] = useState(false);
+
   const { titleText } = useAppSelector((state) => state.filmsState);
 
   useEffect(() => {
@@ -22,6 +24,10 @@ const SearchPage = (): React.ReactElement => {
         return;
       }
 
+      fetchData.results.length === 0
+        ? setSearchNotFound(true)
+        : setSearchNotFound(false);
+
       setFilms(fetchData.results);
     })();
   }, [getFilms, titleText]);
@@ -30,7 +36,7 @@ const SearchPage = (): React.ReactElement => {
     <SearchPageStyled>
       <h1 className="page-title">{titles.searchPage}</h1>
       <Search />
-      <CardList films={films} />
+      {!searchNotFound && <CardList films={films} />}
     </SearchPageStyled>
   );
 };

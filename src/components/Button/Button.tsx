@@ -3,6 +3,7 @@ interface ButtonProps {
   className?: string;
   text: string;
   type?: "submit";
+  isDisabled?: boolean;
 }
 
 const Button = ({
@@ -10,9 +11,15 @@ const Button = ({
   text,
   className,
   type,
+  isDisabled,
 }: ButtonProps): React.ReactElement => {
   return (
-    <button className={className} onClick={actionOnClick} type={type}>
+    <button
+      className={className}
+      onClick={actionOnClick}
+      type={type}
+      disabled={isDisabled}
+    >
       {text}
     </button>
   );

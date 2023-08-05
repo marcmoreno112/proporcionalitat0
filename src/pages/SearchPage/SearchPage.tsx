@@ -6,7 +6,6 @@ import CardList from "../../components/CardList/CardList";
 import { FilmData } from "../../types";
 import Search from "../../components/Search/Search";
 import { useAppSelector } from "../../store";
-import Detail from "../../components/Detail/Detail";
 
 const SearchPage = (): React.ReactElement => {
   const { getFilms } = useFilms();
@@ -45,7 +44,7 @@ const SearchPage = (): React.ReactElement => {
     <SearchPageStyled>
       <h1 className="page-title">{titles.searchPage}</h1>
       <Search />
-      {films.length > 0 && <Detail film={films[0]} />}
+
       {fetchError ? (
         <h2>{fetchError}</h2>
       ) : searchNotFound ? (

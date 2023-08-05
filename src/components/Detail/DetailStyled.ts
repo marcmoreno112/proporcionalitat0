@@ -89,6 +89,11 @@ const DetailStyled = styled.div`
     width: 100px;
     text-align: center;
   }
+
+  *:disabled {
+    background-color: grey;
+    color: white;
+  }
 `;
 
 export default DetailStyled;

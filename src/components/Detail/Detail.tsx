@@ -56,6 +56,8 @@ const Detail = ({
     actionOnCloseButton();
   };
 
+  const isDisabled = !commentValue || !selectedValue;
+
   return (
     <DetailStyled>
       <section className="detail-sections">
@@ -126,7 +128,12 @@ const Detail = ({
             onChange={handleCommentChange}
           />
 
-          <Button type="submit" text="Save" className="save-button" />
+          <Button
+            type="submit"
+            text="Save"
+            className="save-button"
+            isDisabled={isDisabled}
+          />
         </form>
       </section>
     </DetailStyled>

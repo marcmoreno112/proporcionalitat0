@@ -1,12 +1,11 @@
 import { FilmData } from "../../types";
+import { imagesUrl } from "../../utils/urls";
 import titles from "../../utils/titles";
 import CardStyled from "./CardStyled";
 
 interface CardProps {
   film: FilmData;
 }
-
-const imagesUrl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2";
 
 const Card = ({
   film: {

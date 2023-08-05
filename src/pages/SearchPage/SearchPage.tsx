@@ -44,6 +44,7 @@ const SearchPage = (): React.ReactElement => {
     <SearchPageStyled>
       <h1 className="page-title">{titles.searchPage}</h1>
       <Search />
+
       {fetchError ? (
         <h2>{fetchError}</h2>
       ) : searchNotFound ? (

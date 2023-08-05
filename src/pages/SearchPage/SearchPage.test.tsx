@@ -4,7 +4,6 @@ import titles from "../../utils/titles";
 import { renderWithProviders } from "../../utils/testUtils";
 import SearchPage from "./SearchPage";
 import { mockTitleText } from "../../mocks/filmsMocks";
-import placeholders from "../../utils/placeholders";
 
 describe("Given a SearchPage page", () => {
   describe("When it is rendered", () => {
@@ -20,7 +19,7 @@ describe("Given a SearchPage page", () => {
   describe(`When it is rendered and the user types the text ${mockTitleText} in the search bar`, () => {
     test("Then it should show a film with the text inside its title", async () => {
       const inputText = mockTitleText;
-      const expectedPlaceholder = placeholders.searchInput;
+      const expectedPlaceholder = titles.searchInputPlaceholder;
       const expectedTitle = /mario/i;
 
       renderWithProviders(<SearchPage />);

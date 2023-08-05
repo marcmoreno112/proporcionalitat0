@@ -14,21 +14,29 @@ const SearchPage = (): React.ReactElement => {
 
   const [searchNotFound, setSearchNotFound] = useState(false);
 
+  const [fetchError, setFetchError] = useState("");
+
   const { titleText } = useAppSelector((state) => state.filmsState);
 
   useEffect(() => {
     (async () => {
-      const fetchData = await getFilms(titleText);
+      try {
+        const fetchData = await getFilms(titleText);
 
-      if (!fetchData) {
-        return;
+        if (!fetchData) {
+          return;
+        }
+
+        fetchData.results.length === 0
+          ? setSearchNotFound(true)
+          : setSearchNotFound(false);
+
+        setFilms(fetchData.results);
+      } catch (error) {
+        if (error instanceof Error) {
+          setFetchError(error.message);
+        }
       }
-
-      fetchData.results.length === 0
-        ? setSearchNotFound(true)
-        : setSearchNotFound(false);
-
-      setFilms(fetchData.results);
     })();
   }, [getFilms, titleText]);
 
@@ -36,7 +44,9 @@ const SearchPage = (): React.ReactElement => {
     <SearchPageStyled>
       <h1 className="page-title">{titles.searchPage}</h1>
       <Search />
-      {searchNotFound ? (
+      {fetchError ? (
+        <h2>{fetchError}</h2>
+      ) : searchNotFound ? (
         <h2>{titles.searchNotFound}</h2>
       ) : (
         <CardList films={films} />

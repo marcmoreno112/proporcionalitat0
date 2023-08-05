@@ -27,8 +27,12 @@ const Search = (): React.ReactElement => {
     setSearchValue(searchText);
   };
 
+  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
-    <SearchStyled>
+    <SearchStyled onSubmit={handleSubmit}>
       <input
         type="text"
         name="search"

@@ -8,6 +8,8 @@ const CardStyled = styled.li`
   gap: 15px;
   font-size: 2rem;
   color: ${(props) => props.theme.colors.primary};
+  border-bottom: 1px solid;
+  padding: 10px;
 
   .card {
     &-image {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import placeholders from "../../utils/placeholders";
 import SearchStyled from "./SearchStyled";
 import { useDispatch } from "react-redux";
@@ -9,14 +9,22 @@ const Search = (): React.ReactElement => {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const debounce = setTimeout(() => {
+      const changeTitleTextAction = changeTitleTextActionCreator(searchValue);
+
+      dispatch(changeTitleTextAction);
+    }, 300);
+
+    return () => {
+      clearTimeout(debounce);
+    };
+  }, [dispatch, searchValue]);
+
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchText = event.target.value;
 
     setSearchValue(searchText);
-
-    const changeTitleTextAction = changeTitleTextActionCreator(searchText);
-
-    dispatch(changeTitleTextAction);
   };
 
   return (

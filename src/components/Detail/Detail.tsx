@@ -19,10 +19,20 @@ const Detail = ({
 
   const [selectedValue, setSelectedValue] = useState("");
 
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleRatingChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOption = event.target.value;
 
     setSelectedValue(selectedOption);
+  };
+
+  const [commentValue, setCommentValue] = useState("");
+
+  const handleCommentChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const commentText = event.target.value;
+
+    setCommentValue(commentText);
   };
 
   return (
@@ -51,31 +61,40 @@ const Detail = ({
         <div className="detail-title-container">
           <h2 className="detail-title">{filmTitle}</h2>
         </div>
+
         <h3>{releaseDate}</h3>
+
         <form className="detail-form">
           <select
             name="rating"
             id="rating"
             className="detail-form_select"
             value={selectedValue}
-            onChange={handleSelectChange}
+            onChange={handleRatingChange}
           >
             <option value="" disabled>
               Rate the film
             </option>
             <option value="1">1</option>
+
             <option value="2">2</option>
+
             <option value="3">3</option>
+
             <option value="4">4</option>
+
             <option value="5">5</option>
           </select>
 
           <label htmlFor="comment">Comment</label>
+
           <textarea
             name="comment"
             id="comment"
             autoComplete="off"
             className="detail-form_textarea"
+            value={commentValue}
+            onChange={handleCommentChange}
           />
         </form>
       </section>

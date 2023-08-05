@@ -36,7 +36,11 @@ const SearchPage = (): React.ReactElement => {
     <SearchPageStyled>
       <h1 className="page-title">{titles.searchPage}</h1>
       <Search />
-      {!searchNotFound && <CardList films={films} />}
+      {searchNotFound ? (
+        <h2>{titles.searchNotFound}</h2>
+      ) : (
+        <CardList films={films} />
+      )}
     </SearchPageStyled>
   );
 };

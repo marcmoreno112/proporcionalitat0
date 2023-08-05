@@ -52,19 +52,42 @@ const DetailStyled = styled.div`
         border-radius: 8px;
         border: 1px solid;
         border-color: ${(props) => props.theme.colors.primary};
+        font-size: 1.1rem;
+        width: 40vh;
       }
 
       &_select {
         width: 100%;
-        font-family: inherit;
         padding: 10px;
         border-radius: 8px;
-        border-right: 16px solid transparent;
+        border-right: 16px solid;
         border-color: transparent;
         background-color: ${(props) => props.theme.colors.primary};
         color: white;
+        font-size: 1.1rem;
       }
     }
+  }
+
+  .close-button {
+    border: 1px solid;
+    padding: 8px;
+    border-radius: 8px;
+
+    &-container {
+      width: 100%;
+      display: flex;
+      justify-content: right;
+    }
+  }
+
+  .save-button {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: ${(props) => props.theme.colors.primary};
+    color: white;
+    width: 100px;
+    text-align: center;
   }
 `;
 

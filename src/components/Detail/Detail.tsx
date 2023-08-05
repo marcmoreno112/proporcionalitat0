@@ -63,7 +63,13 @@ const Detail = ({
       </section>
 
       <section className="detail-sections">
-        <Button actionOnClick={closeAction} text="Close" />
+        <div className="close-button-container">
+          <Button
+            actionOnClick={closeAction}
+            text="Close"
+            className="close-button"
+          />
+        </div>
 
         <div className="detail-title-container">
           <h2 className="detail-title">{filmTitle}</h2>
@@ -104,7 +110,11 @@ const Detail = ({
             onChange={handleCommentChange}
           />
 
-          <Button actionOnClick={submitAction} text="Save" />
+          <Button
+            actionOnClick={submitAction}
+            text="Save"
+            className="save-button"
+          />
         </form>
       </section>
     </DetailStyled>

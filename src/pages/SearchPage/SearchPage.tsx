@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useFilms from "../../hooks/useFilms/useFilms";
-import pageTitles from "../../utils/pageTitles";
+import titles from "../../utils/titles";
 import SearchPageStyled from "./SearchPageStyled";
 import CardList from "../../components/CardList/CardList";
 import { FilmData } from "../../types";
@@ -28,7 +28,7 @@ const SearchPage = (): React.ReactElement => {
 
   return (
     <SearchPageStyled>
-      <h1 className="page-title">{pageTitles.search}</h1>
+      <h1 className="page-title">{titles.searchPage}</h1>
       <Search />
       <CardList films={films} />
     </SearchPageStyled>

@@ -1,5 +1,5 @@
 export interface FilmData {
-  poster_path: string;
+  poster_path: string | null;
   title: string;
   release_date: string;
   id: number;

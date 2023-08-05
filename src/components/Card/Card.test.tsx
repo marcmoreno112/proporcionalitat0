@@ -6,7 +6,7 @@ import titles from "../../utils/titles";
 
 describe("Given a Card component", () => {
   describe("When it receives a film", () => {
-    test("Then it should show the title of the film", () => {
+    test("Then it should show the title, the poster and the release date of the film", () => {
       const film = filmMock;
       const expectedTitle = film.title;
       const expectedAltText = film.title;

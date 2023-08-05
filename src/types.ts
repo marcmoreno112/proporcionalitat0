@@ -1,6 +1,6 @@
 export interface FilmData {
-  posterUrl: string;
-  filmTitle: string;
-  releaseDate: string;
+  poster_path: string;
+  title: string;
+  release_date: string;
   id: number;
 }

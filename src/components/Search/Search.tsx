@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import placeholders from "../../utils/placeholders";
 import SearchStyled from "./SearchStyled";
 import { useDispatch } from "react-redux";
 import { changeTitleTextActionCreator } from "../../store/films/filmsSlice";
+import titles from "../../utils/titles";
 
 const Search = (): React.ReactElement => {
   const [searchValue, setSearchValue] = useState("");
@@ -39,7 +39,7 @@ const Search = (): React.ReactElement => {
         id="search"
         autoComplete="off"
         className="input"
-        placeholder={placeholders.searchInput}
+        placeholder={titles.searchInputPlaceholder}
         value={searchValue}
         onChange={handleSearchChange}
       />

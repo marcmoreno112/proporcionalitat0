@@ -1,4 +1,5 @@
 import { vi } from "vitest";
+import userEvent from "@testing-library/user-event";
 import { filmMock } from "../../mocks/filmsMocks";
 import { renderWithProviders } from "../../utils/testUtils";
 import Detail from "./Detail";
@@ -46,6 +47,26 @@ describe("Given a Detail component", () => {
       expect(closeButton).toBeInTheDocument();
       expect(saveButton).toBeInTheDocument();
       expect(saveButton).toBeDisabled();
+    });
+  });
+  describe("When it receives a film and the user clicks the close button", () => {
+    test("Then it should call the closeAction", async () => {
+      const film = filmMock;
+      const expectedCloseButtonText = "Close";
+      const closeAction = vi.fn();
+      const saveAction = vi.fn();
+
+      renderWithProviders(
+        <Detail film={film} closeAction={closeAction} saveAction={saveAction} />
+      );
+
+      const closeButton = screen.getByRole("button", {
+        name: expectedCloseButtonText,
+      });
+
+      await userEvent.click(closeButton);
+
+      expect(closeAction).toHaveBeenCalled();
     });
   });
 });

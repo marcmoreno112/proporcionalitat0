@@ -11,10 +11,10 @@ describe("Given a Detail component", () => {
       const expectedTitle = film.title;
       const expectedAltText = film.title;
       const closeAction = vi.fn();
-      const sendAction = vi.fn();
+      const saveAction = vi.fn();
 
       renderWithProviders(
-        <Detail film={film} closeAction={closeAction} sendAction={sendAction} />
+        <Detail film={film} closeAction={closeAction} saveAction={saveAction} />
       );
 
       const title = screen.getByText(expectedTitle);
@@ -23,6 +23,29 @@ describe("Given a Detail component", () => {
 
       expect(title).toBeInTheDocument();
       expect(image).toBeInTheDocument();
+    });
+    test("Then it should show the close button and the disabled send button", () => {
+      const film = filmMock;
+      const closeAction = vi.fn();
+      const saveAction = vi.fn();
+      const expectedCloseButtonText = "Close";
+      const expectedSaveButtonText = "Save";
+
+      renderWithProviders(
+        <Detail film={film} closeAction={closeAction} saveAction={saveAction} />
+      );
+
+      const closeButton = screen.getByRole("button", {
+        name: expectedCloseButtonText,
+      });
+
+      const saveButton = screen.getByRole("button", {
+        name: expectedSaveButtonText,
+      });
+
+      expect(closeButton).toBeInTheDocument();
+      expect(saveButton).toBeInTheDocument();
+      expect(saveButton).toBeDisabled();
     });
   });
 });

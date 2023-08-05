@@ -8,7 +8,7 @@ import Button from "../Button/Button";
 interface DetailProps {
   film: FilmData;
   closeAction: () => void;
-  sendAction: () => void;
+  saveAction: () => void;
 }
 
 const Detail = ({
@@ -18,7 +18,7 @@ const Detail = ({
     release_date: releaseDate,
   },
   closeAction,
-  sendAction,
+  saveAction,
 }: DetailProps): React.ReactElement => {
   const imageUrl = `${imagesUrl}${posterPath}`;
 
@@ -51,7 +51,7 @@ const Detail = ({
   const actionOnSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    sendAction();
+    saveAction();
 
     actionOnCloseButton();
   };

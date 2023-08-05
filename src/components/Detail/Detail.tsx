@@ -2,6 +2,7 @@ import { FilmData } from "../../types";
 import { errorImage, imagesUrl } from "../../utils/urls";
 import titles from "../../utils/titles";
 import DetailStyled from "./DetailStyled";
+import { useState } from "react";
 
 interface DetailProps {
   film: FilmData;
@@ -15,6 +16,14 @@ const Detail = ({
   },
 }: DetailProps): React.ReactElement => {
   const imageUrl = `${imagesUrl}${posterPath}`;
+
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOption = event.target.value;
+
+    setSelectedValue(selectedOption);
+  };
 
   return (
     <DetailStyled>
@@ -44,7 +53,13 @@ const Detail = ({
         </div>
         <h3>{releaseDate}</h3>
         <form className="detail-form">
-          <select name="rating" id="rating" className="detail-form_select">
+          <select
+            name="rating"
+            id="rating"
+            className="detail-form_select"
+            value={selectedValue}
+            onChange={handleSelectChange}
+          >
             <option value="" disabled>
               Rate the film
             </option>

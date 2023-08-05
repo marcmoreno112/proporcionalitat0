@@ -18,7 +18,7 @@ const Detail = ({
 
   return (
     <DetailStyled>
-      <section>
+      <section className="detail-sections">
         {posterPath ? (
           <img
             alt={filmTitle}
@@ -38,16 +38,30 @@ const Detail = ({
         )}
       </section>
 
-      <section>
-        <div className="card-title-container">
-          <h2 className="card-title">{filmTitle}</h2>
+      <section className="detail-sections">
+        <div className="detail-title-container">
+          <h2 className="detail-title">{filmTitle}</h2>
         </div>
         <h3>{releaseDate}</h3>
-        <form>
-          <label htmlFor="rating">Rating</label>
-          <input type="text" name="rating" id="rating" autoComplete="off" />
+        <form className="detail-form">
+          <select name="rating" id="rating" className="detail-form_select">
+            <option value="" disabled>
+              Rate the film
+            </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
           <label htmlFor="comment">Comment</label>
-          <textarea name="comment" id="comment" autoComplete="off" />
+          <textarea
+            name="comment"
+            id="comment"
+            autoComplete="off"
+            className="detail-form_textarea"
+          />
         </form>
       </section>
     </DetailStyled>

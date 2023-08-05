@@ -25,6 +25,7 @@ describe("Given a Detail component", () => {
       expect(title).toBeInTheDocument();
       expect(image).toBeInTheDocument();
     });
+
     test("Then it should show the close button and the disabled send button", () => {
       const film = filmMock;
       const closeAction = vi.fn();
@@ -49,6 +50,7 @@ describe("Given a Detail component", () => {
       expect(saveButton).toBeDisabled();
     });
   });
+
   describe("When it receives a film and the user clicks the close button", () => {
     test("Then it should call the closeAction", async () => {
       const film = filmMock;
@@ -67,6 +69,38 @@ describe("Given a Detail component", () => {
       await userEvent.click(closeButton);
 
       expect(closeAction).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it receives a film, the user selects a rate number, then types a comment and clicks the save button", () => {
+    test("Then it should call the sendAction", async () => {
+      const film = filmMock;
+      const expectedSaveButtonText = "Save";
+      const closeAction = vi.fn();
+      const saveAction = vi.fn();
+      const expectedCommentLabel = "Comment";
+
+      renderWithProviders(
+        <Detail film={film} closeAction={closeAction} saveAction={saveAction} />
+      );
+
+      const rating = screen.getByRole("combobox");
+
+      await userEvent.selectOptions(rating, "1");
+
+      const comment = screen.getByRole("textbox", {
+        name: expectedCommentLabel,
+      });
+
+      await userEvent.type(comment, "any text");
+
+      const saveButton = screen.getByRole("button", {
+        name: expectedSaveButtonText,
+      });
+
+      await userEvent.click(saveButton);
+
+      expect(saveAction).toHaveBeenCalled();
     });
   });
 });

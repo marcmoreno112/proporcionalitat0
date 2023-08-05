@@ -25,6 +25,7 @@ describe("Given a Card component", () => {
       expect(releaseDate).toBeInTheDocument();
     });
   });
+
   describe("When it receives a film with a null posterPath", () => {
     test(`Then it should show an image with the altText ${titles.missingPosterPath}`, () => {
       const film = filmsMock[1];

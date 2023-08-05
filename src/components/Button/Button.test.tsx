@@ -23,6 +23,7 @@ describe("Given a Button component", () => {
 
       expect(button).toBeInTheDocument();
     });
+
     describe("And the user clicks the button", () => {
       test("Then it should call the actionOnClick function", async () => {
         const actionOnClick = vi.fn();

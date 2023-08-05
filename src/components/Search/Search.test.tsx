@@ -16,6 +16,7 @@ describe("Given a Search component", () => {
       expect(input).toBeInTheDocument();
     });
   });
+
   describe("When it is rendered and the user types 'Super Mario' in the input", () => {
     test("Then it should show the text 'Super Mario' inside of the input", async () => {
       const inputText = "Super Mario";

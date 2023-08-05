@@ -8,11 +8,11 @@ describe("Given a CardList component", () => {
     test("Then it should show the title of the second one", () => {
       const films = filmsMock;
 
-      const expectedTitle = films[1].filmTitle;
+      const expectedTitle = films[1].title;
 
       renderWithProviders(<CardList films={films} />);
 
-      const resultTitle = screen.getByRole("heading", { name: expectedTitle });
+      const resultTitle = screen.getByText(expectedTitle);
 
       expect(resultTitle).toBeInTheDocument();
     });

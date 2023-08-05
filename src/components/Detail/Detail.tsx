@@ -3,9 +3,12 @@ import { errorImage, imagesUrl } from "../../utils/urls";
 import titles from "../../utils/titles";
 import DetailStyled from "./DetailStyled";
 import { useState } from "react";
+import Button from "../Button/Button";
 
 interface DetailProps {
   film: FilmData;
+  closeAction: () => void;
+  submitAction: () => void;
 }
 
 const Detail = ({
@@ -14,6 +17,8 @@ const Detail = ({
     title: filmTitle,
     release_date: releaseDate,
   },
+  closeAction,
+  submitAction,
 }: DetailProps): React.ReactElement => {
   const imageUrl = `${imagesUrl}${posterPath}`;
 
@@ -58,6 +63,8 @@ const Detail = ({
       </section>
 
       <section className="detail-sections">
+        <Button actionOnClick={closeAction} text="Close" />
+
         <div className="detail-title-container">
           <h2 className="detail-title">{filmTitle}</h2>
         </div>
@@ -96,6 +103,8 @@ const Detail = ({
             value={commentValue}
             onChange={handleCommentChange}
           />
+
+          <Button actionOnClick={submitAction} text="Save" />
         </form>
       </section>
     </DetailStyled>

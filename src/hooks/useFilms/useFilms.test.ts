@@ -16,7 +16,7 @@ describe("Given a getFilms function", () => {
 
       const expectedFilms = filmsMock;
 
-      expect(films?.results).toStrictEqual(expectedFilms);
+      expect(expectedFilms).toStrictEqual(films?.results);
     });
   });
 });

@@ -1,7 +1,8 @@
 import { screen } from "@testing-library/react";
-import { filmMock } from "../../mocks/filmsMocks";
+import { filmMock, filmsMock } from "../../mocks/filmsMocks";
 import { renderWithProviders } from "../../utils/testUtils";
 import Card from "./Card";
+import titles from "../../utils/titles";
 
 describe("Given a Card component", () => {
   describe("When it receives a film", () => {
@@ -22,6 +23,18 @@ describe("Given a Card component", () => {
       expect(title).toBeInTheDocument();
       expect(altText).toBeInTheDocument();
       expect(releaseDate).toBeInTheDocument();
+    });
+  });
+  describe("When it receives a film with a null posterPath", () => {
+    test(`Then it should show an image with the altText ${titles.missingPosterPath}`, () => {
+      const film = filmsMock[1];
+      const expectedAltText = titles.missingPosterPath;
+
+      renderWithProviders(<Card film={film} />);
+
+      const altText = screen.getByAltText(expectedAltText);
+
+      expect(altText).toBeInTheDocument();
     });
   });
 });

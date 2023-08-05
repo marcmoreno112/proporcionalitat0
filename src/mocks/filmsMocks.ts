@@ -11,12 +11,11 @@ export const filmMock: FilmData = {
 export const filmsMock: FilmData[] = [
   filmMock,
   {
-    title: "Atrapaalmas",
-    poster_path:
-      "https://www.themoviedb.org/t/p/w1280/nxXdasJvK2wdEW5JHEOeezIzjnH.jpg",
+    title: "Mario & Luigi",
+    poster_path: null,
     release_date: "2023-08",
     id: 2,
   },
 ];
 
-export const mockTitleText = "Super Mario";
+export const mockTitleText = "Mario";

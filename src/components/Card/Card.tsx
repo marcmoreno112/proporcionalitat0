@@ -1,4 +1,5 @@
 import { FilmData } from "../../types";
+import titles from "../../utils/titles";
 import CardStyled from "./CardStyled";
 
 interface CardProps {
@@ -34,7 +35,7 @@ const Card = ({
         />
       ) : (
         <img
-          alt={"Missing"}
+          alt={titles.missingPosterPath}
           src={errorImage}
           width={300}
           height={450}

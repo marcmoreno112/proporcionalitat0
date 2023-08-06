@@ -6,6 +6,10 @@ const NavbarStyled = styled.nav`
   font-size: 2 rem;
   color: ${(props) => props.theme.colors.primary};
   width: 100%;
+
+  .active {
+    color: ${(props) => props.theme.colors.feedbackError};
+  }
 `;
 
 export default NavbarStyled;

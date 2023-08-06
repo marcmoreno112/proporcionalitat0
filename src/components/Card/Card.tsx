@@ -29,10 +29,11 @@ const Card = ({ film }: CardProps): React.ReactElement => {
       <div className="card-title-container">
         <h2 className="card-title">{film.title}</h2>
       </div>
-      <h3>{film.release_date}</h3>
+      <h3>Release: {film.release_date}</h3>
       {isRatedFilm && (
         <>
-          <h3>{film.rate}</h3> <p>{film.comment}</p>
+          <h3 className="card-rating">Rating: {film.rate}/5</h3>
+          <p className="card-comment">{film.comment}</p>
         </>
       )}
       <button onClick={detailAction}>

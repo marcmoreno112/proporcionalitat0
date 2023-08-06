@@ -6,6 +6,7 @@ import CardList from "../../components/CardList/CardList";
 import { FilmData } from "../../types";
 import Search from "../../components/Search/Search";
 import { useAppSelector } from "../../store";
+import Detail from "../../components/Detail/Detail";
 
 const SearchPage = (): React.ReactElement => {
   const { getFilms } = useFilms();
@@ -17,6 +18,8 @@ const SearchPage = (): React.ReactElement => {
   const [fetchError, setFetchError] = useState("");
 
   const { titleText } = useAppSelector((state) => state.filmsState);
+
+  const { detailFilm } = useAppSelector((state) => state.filmsState);
 
   useEffect(() => {
     (async () => {
@@ -44,6 +47,8 @@ const SearchPage = (): React.ReactElement => {
     <SearchPageStyled>
       <h1 className="page-title">{titles.searchPage}</h1>
       <Search />
+
+      {Object.keys(detailFilm).length > 0 && <Detail film={detailFilm} />}
 
       {fetchError ? (
         <h2>{fetchError}</h2>

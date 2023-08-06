@@ -1,3 +1,4 @@
+import { FilmData } from "../../../types";
 import {
   changeTitleTextActionCreator,
   filmsReducer,
@@ -15,6 +16,7 @@ describe("Given a changeTitleText reducer", () => {
       const expectedFilmsState: FilmsStateStructure = {
         titleText: searchText,
         filmsRated: [],
+        detailFilm: {} as FilmData,
       };
 
       const changeTitleTextAction = changeTitleTextActionCreator(searchText);

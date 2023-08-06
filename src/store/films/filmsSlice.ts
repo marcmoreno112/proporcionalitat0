@@ -1,10 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { FilmsStateStructure } from "./types";
-import { RatedFilmData } from "../../types";
+import { FilmData, RatedFilmData } from "../../types";
 
 export const initialFilmsState: FilmsStateStructure = {
   titleText: "",
   filmsRated: [],
+  detailFilm: {} as FilmData,
 };
 
 const filmsSlice = createSlice({
@@ -15,6 +16,13 @@ const filmsSlice = createSlice({
       return {
         ...currentFilmsState,
         titleText: action.payload,
+      };
+    },
+
+    selectDetailFilm: (currentFilmsState, action: PayloadAction<FilmData>) => {
+      return {
+        ...currentFilmsState,
+        detailFilm: action.payload,
       };
     },
 
@@ -43,6 +51,7 @@ const filmsSlice = createSlice({
 export const {
   changeTitleText: changeTitleTextActionCreator,
   addRatedFilm: addRatedFilmActionCreator,
+  selectDetailFilm: selectDetailFilmActionCreator,
 } = filmsSlice.actions;
 
 export const filmsReducer = filmsSlice.reducer;

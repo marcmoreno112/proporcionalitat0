@@ -16,6 +16,11 @@ const SearchStyled = styled.form`
     &::placeholder {
       color: #cabfbf;
     }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 3px ${(props) => props.theme.colors.secondary};
+    }
   }
 `;
 

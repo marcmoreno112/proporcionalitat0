@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import SearchStyled from "./SearchStyled";
 import { useDispatch } from "react-redux";
+import SearchStyled from "./SearchStyled";
 import { changeTitleTextActionCreator } from "../../store/films/filmsSlice";
 import titles from "../../utils/titles";
 

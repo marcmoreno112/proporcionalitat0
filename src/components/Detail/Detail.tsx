@@ -5,11 +5,13 @@ import DetailStyled from "./DetailStyled";
 import { useState } from "react";
 import Button from "../Button/Button";
 import { useAppDispatch } from "../../store";
-import { addRatedFilmActionCreator } from "../../store/films/filmsSlice";
+import {
+  addRatedFilmActionCreator,
+  selectDetailFilmActionCreator,
+} from "../../store/films/filmsSlice";
 
 interface DetailProps {
   film: FilmData;
-  closeAction: () => void;
 }
 
 const Detail = ({
@@ -19,7 +21,6 @@ const Detail = ({
     release_date: releaseDate,
     id,
   },
-  closeAction,
 }: DetailProps): React.ReactElement => {
   const dispatch = useAppDispatch();
 
@@ -43,12 +44,22 @@ const Detail = ({
     setCommentValue(commentText);
   };
 
-  const actionOnCloseButton = () => {
-    closeAction();
+  const closeAction = () => {
+    const initialDetailFilmState = {} as FilmData;
 
+    const resetDetailFilmAction = selectDetailFilmActionCreator(
+      initialDetailFilmState
+    );
+
+    dispatch(resetDetailFilmAction);
+  };
+
+  const actionOnCloseButton = () => {
     setSelectedValue("");
 
     setCommentValue("");
+
+    closeAction();
   };
 
   const saveAction = () => {

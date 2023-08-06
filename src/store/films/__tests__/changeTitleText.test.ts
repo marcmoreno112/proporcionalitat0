@@ -14,6 +14,7 @@ describe("Given a changeTitleText reducer", () => {
 
       const expectedFilmsState: FilmsStateStructure = {
         titleText: searchText,
+        filmsRated: [],
       };
 
       const changeTitleTextAction = changeTitleTextActionCreator(searchText);

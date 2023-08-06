@@ -1,4 +1,3 @@
-import { vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { filmMock } from "../../mocks/filmsMocks";
 import { renderWithProviders } from "../../utils/testUtils";
@@ -11,9 +10,8 @@ describe("Given a Detail component", () => {
       const film = filmMock;
       const expectedTitle = film.title;
       const expectedAltText = film.title;
-      const closeAction = vi.fn();
 
-      renderWithProviders(<Detail film={film} closeAction={closeAction} />);
+      renderWithProviders(<Detail film={film} />);
 
       const title = screen.getByText(expectedTitle);
 
@@ -25,11 +23,10 @@ describe("Given a Detail component", () => {
 
     test("Then it should show the close button and the disabled send button", () => {
       const film = filmMock;
-      const closeAction = vi.fn();
       const expectedCloseButtonText = "Close";
       const expectedSaveButtonText = "Save";
 
-      renderWithProviders(<Detail film={film} closeAction={closeAction} />);
+      renderWithProviders(<Detail film={film} />);
 
       const closeButton = screen.getByRole("button", {
         name: expectedCloseButtonText,
@@ -45,32 +42,13 @@ describe("Given a Detail component", () => {
     });
   });
 
-  describe("When it receives a film and the user clicks the close button", () => {
-    test("Then it should call the closeAction", async () => {
-      const film = filmMock;
-      const expectedCloseButtonText = "Close";
-      const closeAction = vi.fn();
-
-      renderWithProviders(<Detail film={film} closeAction={closeAction} />);
-
-      const closeButton = screen.getByRole("button", {
-        name: expectedCloseButtonText,
-      });
-
-      await userEvent.click(closeButton);
-
-      expect(closeAction).toHaveBeenCalled();
-    });
-  });
-
   describe("When it receives a film, the user selects a rate number, then types a comment and clicks the save button", () => {
     test("Then it should call the sendAction", async () => {
       const film = filmMock;
       const expectedSaveButtonText = "Save";
-      const closeAction = vi.fn();
       const expectedCommentLabel = "Comment";
 
-      renderWithProviders(<Detail film={film} closeAction={closeAction} />);
+      renderWithProviders(<Detail film={film} />);
 
       const rating = screen.getByRole("combobox");
 

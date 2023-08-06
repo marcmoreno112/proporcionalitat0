@@ -5,6 +5,7 @@ const titles = {
   searchInputPlaceholder: "Type a part of the film title",
   fetchError: "We can't show the films. Try again later",
   emptyApiKey: "Remember to set your API key",
+  myList: "Your rated films",
 };
 
 export default titles;

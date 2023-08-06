@@ -10,7 +10,7 @@ describe("Given a Card component", () => {
       const film = filmMock;
       const expectedTitle = film.title;
       const expectedAltText = film.title;
-      const expectedReleaseDate = film.release_date;
+      const expectedReleaseDate = `Release: ${film.release_date}`;
 
       renderWithProviders(<Card film={film} />);
 

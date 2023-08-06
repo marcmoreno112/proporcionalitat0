@@ -1,4 +1,4 @@
-import { FilmData } from "../../types";
+import { FilmData, RatedFilmData } from "../../types";
 import { imagesUrl } from "../../utils/urls";
 import titles from "../../utils/titles";
 import CardStyled from "./CardStyled";
@@ -6,31 +6,19 @@ import { useAppDispatch } from "../../store";
 import { selectDetailFilmActionCreator } from "../../store/films/filmsSlice";
 
 interface CardProps {
-  film: FilmData;
+  film: RatedFilmData | FilmData;
 }
 
-const Card = ({
-  film: {
-    title: filmTitle,
-    poster_path: posterPath,
-    release_date: releaseDate,
-    id,
-  },
-}: CardProps): React.ReactElement => {
+const Card = ({ film }: CardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
 
-  const imageUrl = `${imagesUrl}${posterPath}`;
+  const isRatedFilm = "rate" in film && "comment" in film;
+
+  const imageUrl = `${imagesUrl}${film.poster_path}`;
 
   const errorImage = "images/errorImage.png";
 
   const detailAction = () => {
-    const film: FilmData = {
-      id,
-      poster_path: posterPath,
-      release_date: releaseDate,
-      title: filmTitle,
-    };
-
     const selectDetailFilmAction = selectDetailFilmActionCreator(film);
 
     dispatch(selectDetailFilmAction);
@@ -39,13 +27,18 @@ const Card = ({
   return (
     <CardStyled>
       <div className="card-title-container">
-        <h2 className="card-title">{filmTitle}</h2>
+        <h2 className="card-title">{film.title}</h2>
       </div>
-      <h3>{releaseDate}</h3>
+      <h3>{film.release_date}</h3>
+      {isRatedFilm && (
+        <>
+          <h3>{film.rate}</h3> <p>{film.comment}</p>
+        </>
+      )}
       <button onClick={detailAction}>
-        {posterPath ? (
+        {film.poster_path ? (
           <img
-            alt={filmTitle}
+            alt={film.title}
             src={imageUrl}
             width={300}
             height={450}

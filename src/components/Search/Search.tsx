@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import SearchStyled from "./SearchStyled";
 import { useDispatch } from "react-redux";
 import { changeTitleTextActionCreator } from "../../store/films/filmsSlice";
@@ -27,13 +27,13 @@ const Search = (): React.ReactElement => {
     setSearchValue(searchText);
   };
 
-  const searchInputRef = useRef<HTMLInputElement | null>(null);
-
   const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (searchInputRef.current) {
-      searchInputRef.current.blur();
+    const searchInput = document.getElementById("search");
+
+    if (searchInput) {
+      searchInput.blur();
     }
   };
 

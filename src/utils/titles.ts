@@ -3,6 +3,8 @@ const titles = {
   missingPosterPath: "Missing",
   searchNotFound: "Try another words. This search has no results",
   searchInputPlaceholder: "Type a part of the film title",
+  fetchError: "We can't show the films. Try again later",
+  emptyApiKey: "Remember to set your API key",
 };
 
 export default titles;

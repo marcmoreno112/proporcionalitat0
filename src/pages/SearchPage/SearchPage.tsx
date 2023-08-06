@@ -9,6 +9,8 @@ import { useAppSelector } from "../../store";
 import Detail from "../../components/Detail/Detail";
 
 const SearchPage = (): React.ReactElement => {
+  window.scroll(0, 0);
+
   const { getFilms } = useFilms();
 
   const [films, setFilms] = useState<FilmData[]>([]);
@@ -36,8 +38,13 @@ const SearchPage = (): React.ReactElement => {
 
         setFilms(fetchData.results);
       } catch (error) {
+        const apiKey = import.meta.env.VITE_API_KEY;
+
         if (error instanceof Error) {
-          setFetchError(error.message);
+          setFetchError(titles.fetchError);
+
+          // eslint-disable-next-line no-console
+          !apiKey && console.error(titles.emptyApiKey);
         }
       }
     })();

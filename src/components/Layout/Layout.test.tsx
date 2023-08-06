@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/react";
-import { renderWithProviders } from "../../utils/testUtils";
+import { mockRouterProvider, renderWithProviders } from "../../utils/testUtils";
 import Layout from "./Layout";
 
 describe("Given a Layout component", () => {
@@ -7,7 +7,7 @@ describe("Given a Layout component", () => {
     test("Then it should show an image with the alternative text 'Films logo'", () => {
       const expectedAltText = "Films logo";
 
-      renderWithProviders(<Layout />);
+      renderWithProviders(mockRouterProvider(<Layout />));
 
       const logo = screen.getByAltText(expectedAltText);
 

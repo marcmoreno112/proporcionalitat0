@@ -27,12 +27,12 @@ const CardStyled = styled.li`
     }
 
     &-rating {
-      color: black;
+      color: ${(props) => props.theme.colors.secondary};
       font-size: 1.4rem;
     }
 
     &-comment {
-      color: black;
+      color: ${(props) => props.theme.colors.secondary};
       font-size: 1.3rem;
     }
   }

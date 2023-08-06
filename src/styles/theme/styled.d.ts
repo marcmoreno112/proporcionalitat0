@@ -5,10 +5,7 @@ declare module "styled-components" {
     colors: {
       primary: string;
       secondary: string;
-      tertiary: string;
-      tertiaryDark: string;
-      feedbackOk: string;
-      feedbackError: string;
+      active: string;
     };
 
     fonts: {

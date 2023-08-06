@@ -5,10 +5,7 @@ const HeaderStyled = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  top: 0;
   padding: 20px;
-  position: fixed;
   min-height: 260px;
 
   .logo {

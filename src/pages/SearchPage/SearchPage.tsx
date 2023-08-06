@@ -19,9 +19,7 @@ const SearchPage = (): React.ReactElement => {
 
   const [fetchError, setFetchError] = useState("");
 
-  const { titleText } = useAppSelector((state) => state.filmsState);
-
-  const { detailFilm } = useAppSelector((state) => state.filmsState);
+  const { titleText, detailFilm } = useAppSelector((state) => state.filmsState);
 
   useEffect(() => {
     (async () => {

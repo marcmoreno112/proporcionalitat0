@@ -122,7 +122,7 @@ const Detail = ({
           <h2 className="detail-title">{filmTitle}</h2>
         </div>
 
-        <h3>{releaseDate}</h3>
+        <h3>Release date: {releaseDate}</h3>
 
         <form className="detail-form" onSubmit={actionOnSubmit}>
           <select

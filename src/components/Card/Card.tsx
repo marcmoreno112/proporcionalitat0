@@ -32,12 +32,12 @@ const Card = ({ film }: CardProps): React.ReactElement => {
       <h3>Release: {film.release_date}</h3>
       {isRatedFilm && (
         <>
-          <h3 className="card-rating">Rating: {film.rate}/5</h3>
-          <p className="card-comment">{film.comment}</p>
+          <h3 className="card-rating">Rating: {film.rate as string}/5</h3>
+          <p className="card-comment">{film.comment as string}</p>
         </>
       )}
       <button onClick={detailAction}>
-        {film.poster_path ? (
+        {film.poster_path !== null ? (
           <img
             alt={film.title}
             src={imageUrl}

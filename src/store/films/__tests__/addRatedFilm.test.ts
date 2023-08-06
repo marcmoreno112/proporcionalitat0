@@ -1,29 +1,30 @@
+import { ratedFilmMock } from "../../../mocks/filmsMocks";
 import { FilmData } from "../../../types";
 import {
-  changeTitleTextActionCreator,
+  addRatedFilmActionCreator,
   filmsReducer,
   initialFilmsState,
 } from "../filmsSlice";
 import { FilmsStateStructure } from "../types";
 
-describe("Given a changeTitleText reducer", () => {
-  describe("When it receives a 'Flash' text", () => {
-    test("Then it should return a new state with the titleText changed", () => {
-      const searchText = "Flash";
+describe("Given an addRatedFilm reducer", () => {
+  describe("When it receives a rated film", () => {
+    test("Then it should return a new state with the rated film", () => {
+      const ratedFilm = ratedFilmMock;
 
       const initialTestFilmsState: FilmsStateStructure = initialFilmsState;
 
       const expectedFilmsState: FilmsStateStructure = {
-        titleText: searchText,
-        filmsRated: [],
         detailFilm: {} as FilmData,
+        filmsRated: [ratedFilm],
+        titleText: "",
       };
 
-      const changeTitleTextAction = changeTitleTextActionCreator(searchText);
+      const addRatedFilmAction = addRatedFilmActionCreator(ratedFilm);
 
       const newFilmsState = filmsReducer(
         initialTestFilmsState,
-        changeTitleTextAction
+        addRatedFilmAction
       );
 
       expect(expectedFilmsState).toStrictEqual(newFilmsState);

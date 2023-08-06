@@ -1,14 +1,17 @@
-import { FilmData } from "../../types";
+import { FilmData, RatedFilmData } from "../../types";
 import { errorImage, imagesUrl } from "../../utils/urls";
 import titles from "../../utils/titles";
 import DetailStyled from "./DetailStyled";
 import { useState } from "react";
 import Button from "../Button/Button";
+import { useAppDispatch } from "../../store";
+import {
+  addRatedFilmActionCreator,
+  selectDetailFilmActionCreator,
+} from "../../store/films/filmsSlice";
 
 interface DetailProps {
   film: FilmData;
-  closeAction: () => void;
-  saveAction: () => void;
 }
 
 const Detail = ({
@@ -16,10 +19,11 @@ const Detail = ({
     poster_path: posterPath,
     title: filmTitle,
     release_date: releaseDate,
+    id,
   },
-  closeAction,
-  saveAction,
 }: DetailProps): React.ReactElement => {
+  const dispatch = useAppDispatch();
+
   const imageUrl = `${imagesUrl}${posterPath}`;
 
   const [selectedValue, setSelectedValue] = useState("");
@@ -40,12 +44,37 @@ const Detail = ({
     setCommentValue(commentText);
   };
 
-  const actionOnCloseButton = () => {
-    closeAction();
+  const closeAction = () => {
+    const initialDetailFilmState = {} as FilmData;
 
+    const resetDetailFilmAction = selectDetailFilmActionCreator(
+      initialDetailFilmState
+    );
+
+    dispatch(resetDetailFilmAction);
+  };
+
+  const actionOnCloseButton = () => {
     setSelectedValue("");
 
     setCommentValue("");
+
+    closeAction();
+  };
+
+  const saveAction = () => {
+    const ratedFilm: RatedFilmData = {
+      poster_path: posterPath,
+      id,
+      release_date: releaseDate,
+      title: filmTitle,
+      comment: commentValue,
+      rate: selectedValue,
+    };
+
+    const saveRatedFilmAction = addRatedFilmActionCreator(ratedFilm);
+
+    dispatch(saveRatedFilmAction);
   };
 
   const actionOnSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {

@@ -1,4 +1,4 @@
-import { FilmData } from "../types";
+import { FilmData, RatedFilmData } from "../types";
 
 export const filmMock: FilmData = {
   title: "Super Mario Bros",
@@ -19,3 +19,9 @@ export const filmsMock: FilmData[] = [
 ];
 
 export const mockTitleText = "Mario";
+
+export const ratedFilmMock: RatedFilmData = {
+  ...filmMock,
+  comment: "Very good",
+  rate: "2",
+};

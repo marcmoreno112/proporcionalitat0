@@ -17,6 +17,12 @@ const DetailStyled = styled.div`
   gap: 20px;
   font-size: 1.2rem;
 
+  @media (max-width: 600px) {
+    .detail-image {
+      display: none;
+    }
+  }
+
   .detail {
     &-sections {
       max-width: 300px;

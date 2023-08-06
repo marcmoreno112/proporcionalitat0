@@ -96,7 +96,7 @@ const Detail = ({
             src={imageUrl}
             width={300}
             height={450}
-            className="card-image"
+            className="detail-image"
           />
         ) : (
           <img
@@ -104,7 +104,7 @@ const Detail = ({
             src={errorImage}
             width={300}
             height={450}
-            className="card-image"
+            className="detail-image"
           />
         )}
       </section>

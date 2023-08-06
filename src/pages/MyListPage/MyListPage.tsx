@@ -10,6 +10,8 @@ const MyListPage = (): React.ReactElement => {
     <MyListPageStyled>
       <h1 className="page-title">{titles.myList}</h1>
 
+      {filmsRated.length === 0 && <h2>{titles.emptyMylist}</h2>}
+
       <CardList films={filmsRated} />
     </MyListPageStyled>
   );

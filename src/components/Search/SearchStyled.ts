@@ -8,9 +8,9 @@ const SearchStyled = styled.form`
 
   .input {
     padding: 18px;
-    background-color: ${(props) => props.theme.colors.primary};
+    border: 3px solid ${(props) => props.theme.colors.primary};
     border-radius: 8px;
-    color: white;
+    color: ${(props) => props.theme.colors.secondary};
     font-size: 1.2rem;
 
     &::placeholder {

@@ -22,17 +22,17 @@ describe("Given an App component", () => {
       await userEvent.selectOptions(rating, "1");
 
       const expectedCommentLabel = "Comment";
-      const commentInput = screen.getByRole("textbox", {
+      const commentInput = await screen.findByRole("textbox", {
         name: expectedCommentLabel,
       });
       const typedComment = "any text";
       await userEvent.type(commentInput, typedComment);
 
       const expectedSaveButtonText = "Save";
-      const saveButton = screen.getByRole("button", {
+      const saveButton = await screen.findByRole("button", {
         name: expectedSaveButtonText,
       });
-      await userEvent.click(saveButton);
+      userEvent.click(saveButton);
 
       const expectedMylistLinkText = "My list";
       const mylistLink = screen.getByRole("link", {
@@ -40,7 +40,7 @@ describe("Given an App component", () => {
       });
       await userEvent.click(mylistLink);
 
-      const comment = screen.getByText(typedComment);
+      const comment = await screen.findByText(typedComment);
 
       expect(comment).toBeInTheDocument();
     });

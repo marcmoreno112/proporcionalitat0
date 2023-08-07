@@ -2,7 +2,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   test: {
@@ -20,8 +19,6 @@ export default defineConfig({
         "**/types.ts",
         "**/*.d.ts",
         "src/main.tsx",
-        "src/components/App/App.tsx",
-        "src/router/appRouter.tsx",
       ],
     },
   },

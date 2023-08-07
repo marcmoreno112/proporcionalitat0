@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAppDispatch } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import {
   addRatedFilmActionCreator,
   selectDetailFilmActionCreator,
@@ -26,7 +26,14 @@ const Detail = ({
 
   const imageUrl = `${imagesUrl}${posterPath}`;
 
-  const [selectedValue, setSelectedValue] = useState("");
+  const { filmsRated } = useAppSelector((state) => state.filmsState);
+
+  const existingRateFilm = filmsRated.filter((film) => film.id === id);
+
+  const initialSelectedState =
+    existingRateFilm.length > 0 ? existingRateFilm[0].rate : "";
+
+  const [selectedValue, setSelectedValue] = useState(initialSelectedState);
 
   const handleRatingChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOption = event.target.value;
@@ -34,7 +41,10 @@ const Detail = ({
     setSelectedValue(selectedOption);
   };
 
-  const [commentValue, setCommentValue] = useState("");
+  const initialCommentState =
+    existingRateFilm.length > 0 ? existingRateFilm[0].comment : "";
+
+  const [commentValue, setCommentValue] = useState(initialCommentState);
 
   const handleCommentChange = (
     event: React.ChangeEvent<HTMLTextAreaElement>

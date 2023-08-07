@@ -6,7 +6,7 @@ const HeaderStyled = styled.header`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 65px;
 
   .logo {
     object-fit: contain;

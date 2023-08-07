@@ -1,8 +1,7 @@
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { mockTitleText } from "../../mocks/filmsMocks";
-import titles from "../../utils/titles";
+import { filmMock } from "../../mocks/filmsMocks";
 import { routes } from "../../router/appRouter";
 import { renderWithProviders } from "../../utils/testUtils";
 
@@ -15,16 +14,9 @@ describe("Given an App component", () => {
         return <RouterProvider router={mockRouter} />;
       };
 
-      renderWithProviders(testRouterProvider());
-
-      const inputText = mockTitleText;
-      const expectedPlaceholder = titles.searchInputPlaceholder;
-
-      const input = screen.getByPlaceholderText(expectedPlaceholder);
-      await userEvent.type(input, inputText);
-
-      const detailButton = await screen.findAllByTestId("detail-button");
-      await userEvent.click(detailButton[0]);
+      renderWithProviders(testRouterProvider(), {
+        filmsState: { detailFilm: filmMock, filmsRated: [], titleText: "" },
+      });
 
       const rating = await screen.findByRole("combobox");
       await userEvent.selectOptions(rating, "1");

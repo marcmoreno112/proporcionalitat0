@@ -12,7 +12,7 @@ describe("Given a Card component", () => {
       const expectedAltText = film.title;
       const expectedReleaseDate = `Release: ${film.release_date}`;
 
-      renderWithProviders(<Card film={film} />);
+      renderWithProviders(<Card film={film} isLazy="eager" />);
 
       const title = screen.getByText(expectedTitle);
 
@@ -31,7 +31,7 @@ describe("Given a Card component", () => {
       const film = filmsMock[1];
       const expectedAltText = titles.missingPosterPath;
 
-      renderWithProviders(<Card film={film} />);
+      renderWithProviders(<Card film={film} isLazy="eager" />);
 
       const altText = screen.getByAltText(expectedAltText);
 

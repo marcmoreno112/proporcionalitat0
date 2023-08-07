@@ -39,9 +39,15 @@ const Detail = ({
   const handleCommentChange = (
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
-    const commentText = event.target.value;
+    const initialCommentText = event.target.value;
 
-    setCommentValue(commentText);
+    const cleanedCommentText = initialCommentText.replace(/\s+/g, "");
+
+    const finalCommentText = !cleanedCommentText
+      ? cleanedCommentText
+      : initialCommentText;
+
+    setCommentValue(finalCommentText);
   };
 
   const closeAction = () => {
@@ -85,7 +91,7 @@ const Detail = ({
     actionOnCloseButton();
   };
 
-  const isDisabled = !commentValue || !selectedValue;
+  const isDisabled = !selectedValue;
 
   return (
     <DetailStyled>

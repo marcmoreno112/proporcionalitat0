@@ -7,8 +7,8 @@ const Header = (): React.ReactElement => {
         alt="Films logo"
         src="/images/logo.svg"
         className="logo"
-        width={1941}
-        height={520}
+        width={1493}
+        height={400}
       />
     </HeaderStyled>
   );

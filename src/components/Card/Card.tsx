@@ -7,9 +7,10 @@ import { selectDetailFilmActionCreator } from "../../store/films/filmsSlice";
 
 interface CardProps {
   film: RatedFilmData | FilmData;
+  isLazy: "lazy" | "eager";
 }
 
-const Card = ({ film }: CardProps): React.ReactElement => {
+const Card = ({ film, isLazy }: CardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
 
   const isRatedFilm = "rate" in film && "comment" in film;
@@ -44,6 +45,7 @@ const Card = ({ film }: CardProps): React.ReactElement => {
             width={300}
             height={450}
             className="card-image"
+            loading={isLazy}
           />
         ) : (
           <img

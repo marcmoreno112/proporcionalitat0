@@ -23,10 +23,10 @@ describe("Given an App component", () => {
       const input = screen.getByPlaceholderText(expectedPlaceholder);
       await userEvent.type(input, inputText);
 
-      const detailButton = await screen.getAllByTestId("detail-button");
+      const detailButton = await screen.findAllByTestId("detail-button");
       await userEvent.click(detailButton[0]);
 
-      const rating = screen.getByRole("combobox");
+      const rating = await screen.findByRole("combobox");
       await userEvent.selectOptions(rating, "1");
 
       const expectedCommentLabel = "Comment";

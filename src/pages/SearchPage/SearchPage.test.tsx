@@ -25,9 +25,9 @@ describe("Given a SearchPage page", () => {
       renderWithProviders(<SearchPage />);
       const input = screen.getByPlaceholderText(expectedPlaceholder);
       await userEvent.type(input, inputText);
-      const title = await screen.getAllByText(expectedTitle);
+      const title = await screen.getAllByRole("heading");
 
-      expect(title[0]).toBeInTheDocument();
+      expect(title[title.length - 1]).toContain(expectedTitle);
     });
   });
 });

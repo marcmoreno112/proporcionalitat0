@@ -1,5 +1,4 @@
 import "@testing-library/jest-dom";
-
 import { server } from "./mocks/server.ts";
 import { handlers } from "./mocks/handlers.ts";
 

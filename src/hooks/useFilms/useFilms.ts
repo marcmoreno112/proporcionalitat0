@@ -1,6 +1,6 @@
+import { useCallback } from "react";
 import axios from "axios";
 import { FilmData } from "../../types";
-import { useCallback } from "react";
 
 export const apiUrl = "https://api.themoviedb.org/3/search/movie";
 

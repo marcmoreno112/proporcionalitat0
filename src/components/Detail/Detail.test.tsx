@@ -1,8 +1,8 @@
 import userEvent from "@testing-library/user-event";
+import { screen } from "@testing-library/react";
 import { filmMock } from "../../mocks/filmsMocks";
 import { renderWithProviders } from "../../utils/testUtils";
 import Detail from "./Detail";
-import { screen } from "@testing-library/react";
 
 describe("Given a Detail component", () => {
   describe("When it receives a film", () => {

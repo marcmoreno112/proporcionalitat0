@@ -1,14 +1,14 @@
-import { FilmData, RatedFilmData } from "../../types";
-import { errorImage, imagesUrl } from "../../utils/urls";
-import titles from "../../utils/titles";
-import DetailStyled from "./DetailStyled";
 import { useState } from "react";
-import Button from "../Button/Button";
 import { useAppDispatch } from "../../store";
 import {
   addRatedFilmActionCreator,
   selectDetailFilmActionCreator,
 } from "../../store/films/filmsSlice";
+import { FilmData, RatedFilmData } from "../../types";
+import { errorImage, imagesUrl } from "../../utils/urls";
+import titles from "../../utils/titles";
+import DetailStyled from "./DetailStyled";
+import Button from "../Button/Button";
 
 interface DetailProps {
   film: FilmData;

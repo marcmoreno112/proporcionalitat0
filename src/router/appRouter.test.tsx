@@ -19,13 +19,13 @@ describe("Given an appRouter router", () => {
 
       renderWithProviders(testRouterProvider());
 
-      const mylistLink = screen.getByRole("link", {
+      const mylistLink = await screen.findByRole("link", {
         name: expectedMylistLinkText,
       });
 
       await userEvent.click(mylistLink);
 
-      const mylistTitle = screen.getByRole("heading", {
+      const mylistTitle = await screen.findByRole("heading", {
         name: expectedMylistPageTitle,
       });
 

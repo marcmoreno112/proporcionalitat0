@@ -2,17 +2,22 @@ import { styled } from "styled-components";
 
 const NavbarStyled = styled.nav`
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   font-size: 1.7rem;
   color: ${(props) => props.theme.colors.primary};
-  width: 100%;
+  max-width: 1440px;
   position: fixed;
-  top: 0;
+  top: 5px;
   background-color: white;
-  padding: 20px;
+  padding: 15px;
+  border: 2px solid ${(props) => props.theme.colors.primary};
+  margin: 5px;
+  box-shadow: 2px 2px 10px ${(props) => props.theme.colors.primary};
 
   .active {
-    border-bottom: 2px solid ${(props) => props.theme.colors.primary};
+    text-decoration: underline;
+    text-decoration-color: ${(props) => props.theme.colors.primary};
+    text-decoration-thickness: 3px;
   }
 `;
 

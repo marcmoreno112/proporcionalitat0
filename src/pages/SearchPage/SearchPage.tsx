@@ -11,7 +11,7 @@ import Detail from "../../components/Detail/Detail";
 const SearchPage = (): React.ReactElement => {
   window.scroll(0, 0);
 
-  const { getFilteredFilms } = useFilms();
+  const { getFilteredFilms, getNowPlayingFilms } = useFilms();
 
   const [films, setFilms] = useState<FilmData[]>([]);
 
@@ -24,16 +24,19 @@ const SearchPage = (): React.ReactElement => {
   useEffect(() => {
     (async () => {
       try {
-        const fetchData = await getFilteredFilms(titleText);
+        let fetchData;
+
+        if (titleText === "") {
+          fetchData = await getNowPlayingFilms();
+        } else {
+          fetchData = await getFilteredFilms(titleText);
+        }
 
         if (!fetchData) {
           return;
         }
 
-        fetchData.results.length === 0
-          ? setSearchNotFound(true)
-          : setSearchNotFound(false);
-
+        setSearchNotFound(fetchData.results.length === 0);
         setFilms(fetchData.results);
       } catch (error) {
         const apiKey = import.meta.env.VITE_API_KEY;
@@ -46,7 +49,7 @@ const SearchPage = (): React.ReactElement => {
         }
       }
     })();
-  }, [getFilteredFilms, titleText]);
+  }, [getNowPlayingFilms, getFilteredFilms, titleText]);
 
   return (
     <SearchPageStyled>
@@ -54,6 +57,16 @@ const SearchPage = (): React.ReactElement => {
       <Search />
 
       {Object.keys(detailFilm).length > 0 && <Detail film={detailFilm} />}
+
+      {titleText === "" && (
+        <img
+          src="images/now-playing.svg"
+          alt="now playing"
+          width={350}
+          height={250}
+          className="now-playing"
+        />
+      )}
 
       {fetchError ? (
         <h2>{fetchError}</h2>

@@ -11,7 +11,7 @@ import Detail from "../../components/Detail/Detail";
 const SearchPage = (): React.ReactElement => {
   window.scroll(0, 0);
 
-  const { getFilms } = useFilms();
+  const { getFilteredFilms } = useFilms();
 
   const [films, setFilms] = useState<FilmData[]>([]);
 
@@ -24,7 +24,7 @@ const SearchPage = (): React.ReactElement => {
   useEffect(() => {
     (async () => {
       try {
-        const fetchData = await getFilms(titleText);
+        const fetchData = await getFilteredFilms(titleText);
 
         if (!fetchData) {
           return;
@@ -46,7 +46,7 @@ const SearchPage = (): React.ReactElement => {
         }
       }
     })();
-  }, [getFilms, titleText]);
+  }, [getFilteredFilms, titleText]);
 
   return (
     <SearchPageStyled>

@@ -36,7 +36,7 @@ const Card = ({ film }: CardProps): React.ReactElement => {
           <p className="card-comment">{film.comment as string}</p>
         </>
       )}
-      <button onClick={detailAction} data-testId="detail-button">
+      <button onClick={detailAction}>
         {film.poster_path !== null ? (
           <img
             alt={film.title}

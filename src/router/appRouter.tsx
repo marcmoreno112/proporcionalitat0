@@ -3,6 +3,7 @@ import App from "../components/App/App";
 import paths from "./paths";
 import SearchPage from "../pages/SearchPage/SearchPage";
 import MyListPage from "../pages/MyListPage/MyListPage";
+import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 
 export const routes: RouteObject[] = [
   {
@@ -20,6 +21,10 @@ export const routes: RouteObject[] = [
       {
         path: `${paths.myList}`,
         element: <MyListPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },

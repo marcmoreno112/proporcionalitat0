@@ -6,6 +6,7 @@ const titles = {
   fetchError: "We can't show films. Try again later",
   emptyApiKey: "Remember to set your API key",
   myList: "Your rated films",
+  notFoundPage: "This page doesn't exist",
   emptyMylist:
     "You don't have rated films yet. Please search a film and rate it",
 };

@@ -1,13 +1,7 @@
-# Boilerplate for React apps
+# Films
 
-With Vite + TypeScript
+Films app. Show a list of films filtered by searched title. User can rate, comment and see the list of its rated films.
 
-## Scripts
+[Live Site](https://films-app-deploy.netlify.app/)
 
-`npm run dev`: starts a development server
-
-`npm run build`: builds the app
-
-`npm run preview`: runs the built app
-
-`npm run lint`: runs ESLint
+![Films](./readme-screenshots/films.jpeg)

@@ -3,8 +3,8 @@ import { styled } from "styled-components";
 const SearchStyled = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: left;
-  width: 100%;
 
   .input {
     padding: 18px;

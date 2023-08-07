@@ -12,7 +12,7 @@ const NavbarStyled = styled.nav`
   padding: 20px;
 
   .active {
-    color: ${(props) => props.theme.colors.active};
+    border-bottom: 2px solid ${(props) => props.theme.colors.primary};
   }
 `;
 

@@ -6,12 +6,12 @@ const HeaderStyled = styled.header`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  min-height: 260px;
+  margin-top: 50px;
 
   .logo {
     object-fit: contain;
     width: auto;
-    max-height: 260px;
+    max-height: 200px;
   }
 `;
 

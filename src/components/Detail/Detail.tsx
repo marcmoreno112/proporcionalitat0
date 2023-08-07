@@ -1,14 +1,14 @@
-import { FilmData, RatedFilmData } from "../../types";
-import { errorImage, imagesUrl } from "../../utils/urls";
-import titles from "../../utils/titles";
-import DetailStyled from "./DetailStyled";
 import { useState } from "react";
-import Button from "../Button/Button";
 import { useAppDispatch } from "../../store";
 import {
   addRatedFilmActionCreator,
   selectDetailFilmActionCreator,
 } from "../../store/films/filmsSlice";
+import { FilmData, RatedFilmData } from "../../types";
+import { errorImage, imagesUrl } from "../../utils/urls";
+import titles from "../../utils/titles";
+import DetailStyled from "./DetailStyled";
+import Button from "../Button/Button";
 
 interface DetailProps {
   film: FilmData;
@@ -39,9 +39,15 @@ const Detail = ({
   const handleCommentChange = (
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
-    const commentText = event.target.value;
+    const initialCommentText = event.target.value;
 
-    setCommentValue(commentText);
+    const cleanedCommentText = initialCommentText.replace(/\s+/g, "");
+
+    const finalCommentText = !cleanedCommentText
+      ? cleanedCommentText
+      : initialCommentText;
+
+    setCommentValue(finalCommentText);
   };
 
   const closeAction = () => {
@@ -85,7 +91,7 @@ const Detail = ({
     actionOnCloseButton();
   };
 
-  const isDisabled = !commentValue || !selectedValue;
+  const isDisabled = !selectedValue;
 
   return (
     <DetailStyled>
@@ -122,7 +128,7 @@ const Detail = ({
           <h2 className="detail-title">{filmTitle}</h2>
         </div>
 
-        <h3>{releaseDate}</h3>
+        <h3>Release date: {releaseDate}</h3>
 
         <form className="detail-form" onSubmit={actionOnSubmit}>
           <select

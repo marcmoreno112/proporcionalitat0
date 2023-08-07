@@ -1,9 +1,9 @@
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import { renderWithProviders } from "../utils/testUtils";
 import titles from "../utils/titles";
 import { routes } from "./appRouter";
-import { RouterProvider, createMemoryRouter } from "react-router-dom";
 
 describe("Given an appRouter router", () => {
   describe("When the user clicks the mylist link", () => {

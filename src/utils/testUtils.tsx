@@ -1,16 +1,16 @@
-import { PreloadedState } from "@reduxjs/toolkit";
-import { RootState, setupStore, store } from "../store";
-import { Provider } from "react-redux";
-import { ThemeProvider } from "styled-components";
-import theme from "../styles/theme/theme";
-import GlobalStyle from "../styles/GlobalStyles/GlobalStyles";
 import { PropsWithChildren } from "react";
-import { render } from "@testing-library/react";
+import { Provider } from "react-redux";
 import {
   RouteObject,
   RouterProvider,
   createMemoryRouter,
 } from "react-router-dom";
+import { PreloadedState } from "@reduxjs/toolkit";
+import { render } from "@testing-library/react";
+import { RootState, setupStore, store } from "../store";
+import { ThemeProvider } from "styled-components";
+import theme from "../styles/theme/theme";
+import GlobalStyle from "../styles/GlobalStyles/GlobalStyles";
 
 export const renderWithProviders = (
   ui: React.ReactElement,

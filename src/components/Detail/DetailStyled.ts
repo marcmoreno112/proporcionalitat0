@@ -14,10 +14,10 @@ const DetailStyled = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   font-size: 1.2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     .detail-image {
       display: none;
     }
@@ -59,7 +59,6 @@ const DetailStyled = styled.div`
         border: 1px solid;
         border-color: ${(props) => props.theme.colors.primary};
         font-size: 1.1rem;
-        width: 40vh;
       }
 
       &_select {
@@ -99,6 +98,7 @@ const DetailStyled = styled.div`
   *:disabled {
     background-color: grey;
     color: white;
+    cursor: not-allowed;
   }
 `;
 

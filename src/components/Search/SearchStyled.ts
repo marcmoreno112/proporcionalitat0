@@ -8,13 +8,18 @@ const SearchStyled = styled.form`
 
   .input {
     padding: 18px;
-    background-color: ${(props) => props.theme.colors.primary};
+    border: 3px solid ${(props) => props.theme.colors.primary};
     border-radius: 8px;
-    color: white;
+    color: ${(props) => props.theme.colors.secondary};
     font-size: 1.2rem;
 
     &::placeholder {
       color: #cabfbf;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 3px ${(props) => props.theme.colors.secondary};
     }
   }
 `;

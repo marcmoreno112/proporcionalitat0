@@ -5,11 +5,13 @@ import SearchPageStyled from "./SearchPageStyled";
 import CardList from "../../components/CardList/CardList";
 import { FilmData } from "../../types";
 import Search from "../../components/Search/Search";
-import { useAppSelector } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import Detail from "../../components/Detail/Detail";
 
 const SearchPage = (): React.ReactElement => {
   window.scroll(0, 0);
+
+  const dispatch = useAppDispatch();
 
   const { getFilteredFilms, getNowPlayingFilms } = useFilms();
 
@@ -24,6 +26,12 @@ const SearchPage = (): React.ReactElement => {
   useEffect(() => {
     (async () => {
       try {
+        // const resetDetailFilmAction = selectDetailFilmActionCreator(
+        //   {} as FilmData
+        // );
+
+        // dispatch(resetDetailFilmAction);
+
         let fetchData;
 
         if (titleText === "") {
@@ -49,7 +57,7 @@ const SearchPage = (): React.ReactElement => {
         }
       }
     })();
-  }, [getNowPlayingFilms, getFilteredFilms, titleText]);
+  }, [getNowPlayingFilms, getFilteredFilms, titleText, dispatch]);
 
   return (
     <SearchPageStyled>

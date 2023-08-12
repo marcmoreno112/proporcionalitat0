@@ -15,16 +15,6 @@ const CardStyled = styled.li`
     &-image {
       object-fit: contain;
     }
-
-    &-rating {
-      color: ${(props) => props.theme.colors.secondary};
-      font-size: 1.4rem;
-    }
-
-    &-comment {
-      color: ${(props) => props.theme.colors.secondary};
-      font-size: 1.3rem;
-    }
   }
 `;
 

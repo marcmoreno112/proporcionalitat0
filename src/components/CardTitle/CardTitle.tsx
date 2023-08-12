@@ -14,7 +14,7 @@ const CardTitle = ({
       <div className="card-title-container">
         <h2 className="card-title">{title}</h2>
       </div>
-      <h3>Release: {releaseDate}</h3>
+      <h3 className="card-release">Release: {releaseDate}</h3>
     </CardTitleStyled>
   );
 };

@@ -5,6 +5,7 @@ import CardStyled from "./CardStyled";
 import { useAppDispatch } from "../../store";
 import { selectDetailFilmActionCreator } from "../../store/films/filmsSlice";
 import CardTitle from "../CardTitle/CardTitle";
+import CardRating from "../CardRating/CardRating";
 
 interface CardProps {
   film: RatedFilmData | FilmData;
@@ -29,12 +30,7 @@ const Card = ({ film, isLazy }: CardProps): React.ReactElement => {
   return (
     <CardStyled>
       <CardTitle releaseDate={film.release_date} title={film.title} />
-      {isRatedFilm && (
-        <>
-          <h3 className="card-rating">Rating: {film.rate as string}/5</h3>
-          <p className="card-comment">{film.comment as string}</p>
-        </>
-      )}
+      {isRatedFilm && <CardRating comment={film.comment} rate={film.rate} />}
       <button onClick={detailAction}>
         {film.poster_path !== null ? (
           <img

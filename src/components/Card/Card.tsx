@@ -4,6 +4,7 @@ import titles from "../../utils/titles";
 import CardStyled from "./CardStyled";
 import { useAppDispatch } from "../../store";
 import { selectDetailFilmActionCreator } from "../../store/films/filmsSlice";
+import CardTitle from "../CardTitle/CardTitle";
 
 interface CardProps {
   film: RatedFilmData | FilmData;
@@ -27,10 +28,7 @@ const Card = ({ film, isLazy }: CardProps): React.ReactElement => {
 
   return (
     <CardStyled>
-      <div className="card-title-container">
-        <h2 className="card-title">{film.title}</h2>
-      </div>
-      <h3>Release: {film.release_date}</h3>
+      <CardTitle releaseDate={film.release_date} title={film.title} />
       {isRatedFilm && (
         <>
           <h3 className="card-rating">Rating: {film.rate as string}/5</h3>

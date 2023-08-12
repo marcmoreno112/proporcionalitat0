@@ -16,16 +16,6 @@ const CardStyled = styled.li`
       object-fit: contain;
     }
 
-    &-title {
-      word-wrap: break-word;
-      text-transform: uppercase;
-      font-size: 2rem;
-
-      &-container {
-        max-width: 100%;
-      }
-    }
-
     &-rating {
       color: ${(props) => props.theme.colors.secondary};
       font-size: 1.4rem;

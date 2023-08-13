@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import useFilms from "../../hooks/useFilms/useFilms";
 import titles from "../../utils/titles";
 import SearchPageStyled from "./SearchPageStyled";
-import CardList from "../../components/CardList/CardList";
 import { FilmData } from "../../types";
 import Search from "../../components/Search/Search";
 import { useAppDispatch, useAppSelector } from "../../store";
 import Detail from "../../components/Detail/Detail";
+import SearchPageCardList from "../../components/SearchPageCardList/SearchPageCardList";
 
 const SearchPage = (): React.ReactElement => {
   window.scroll(0, 0);
@@ -81,7 +81,7 @@ const SearchPage = (): React.ReactElement => {
       ) : searchNotFound ? (
         <h2>{titles.searchNotFound}</h2>
       ) : (
-        <CardList films={films} />
+        <SearchPageCardList films={films} />
       )}
     </SearchPageStyled>
   );

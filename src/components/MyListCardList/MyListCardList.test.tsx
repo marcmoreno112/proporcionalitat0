@@ -1,16 +1,16 @@
 import { screen } from "@testing-library/react";
-import { filmsMock } from "../../mocks/filmsMocks";
+import { ratedFilmsMock } from "../../mocks/filmsMocks";
 import { renderWithProviders } from "../../utils/testUtils";
-import CardList from "./CardList";
+import MyListCardList from "./MyListCardList";
 
-describe("Given a CardList component", () => {
+describe("Given a MyListCardList component", () => {
   describe("When it receives a list of films", () => {
     test("Then it should show the title of the second one", () => {
-      const films = filmsMock;
+      const films = ratedFilmsMock;
 
       const expectedTitle = films[1].title;
 
-      renderWithProviders(<CardList films={films} />);
+      renderWithProviders(<MyListCardList films={films} />);
 
       const resultTitle = screen.getByText(expectedTitle);
 

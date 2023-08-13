@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import CardList from "../../components/CardList/CardList";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { changeTitleTextActionCreator } from "../../store/films/filmsSlice";
 import titles from "../../utils/titles";
 import MyListPageStyled from "./MyListPageStyled";
+import MyListCardList from "../../components/MyListCardList/MyListCardList";
 
 const MyListPage = (): React.ReactElement => {
   const { filmsRated } = useAppSelector((state) => state.filmsState);
@@ -12,6 +12,7 @@ const MyListPage = (): React.ReactElement => {
 
   useEffect(() => {
     const changeTitleTextAction = changeTitleTextActionCreator("");
+
     dispatch(changeTitleTextAction);
   }, [dispatch]);
 
@@ -21,7 +22,7 @@ const MyListPage = (): React.ReactElement => {
 
       {filmsRated.length === 0 && <h2>{titles.emptyMylist}</h2>}
 
-      <CardList films={filmsRated} />
+      <MyListCardList films={filmsRated} />
     </MyListPageStyled>
   );
 };

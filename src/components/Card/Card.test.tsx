@@ -4,7 +4,7 @@ import { renderWithProviders } from "../../utils/testUtils";
 import Card from "./Card";
 import titles from "../../utils/titles";
 
-describe("Given a Card component", () => {
+describe("Given a MyListCard component", () => {
   describe("When it receives a film", () => {
     test("Then it should show the title, the poster and the release date of the film", () => {
       const film = filmMock;

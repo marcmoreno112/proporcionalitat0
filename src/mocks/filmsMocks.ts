@@ -25,3 +25,15 @@ export const ratedFilmMock: RatedFilmData = {
   comment: "Very good",
   rate: "2",
 };
+
+export const ratedFilmsMock: RatedFilmData[] = [
+  ratedFilmMock,
+  {
+    title: "Mario & Luigi",
+    poster_path: null,
+    release_date: "2023-08",
+    id: 2,
+    comment: "Very good",
+    rate: "2",
+  },
+];

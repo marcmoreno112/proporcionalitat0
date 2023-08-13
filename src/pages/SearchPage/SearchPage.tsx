@@ -26,12 +26,6 @@ const SearchPage = (): React.ReactElement => {
   useEffect(() => {
     (async () => {
       try {
-        // const resetDetailFilmAction = selectDetailFilmActionCreator(
-        //   {} as FilmData
-        // );
-
-        // dispatch(resetDetailFilmAction);
-
         let fetchData;
 
         if (titleText === "") {

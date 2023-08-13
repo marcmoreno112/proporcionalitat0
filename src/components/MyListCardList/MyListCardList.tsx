@@ -1,6 +1,6 @@
 import { RatedFilmData } from "../../types";
-import MyListCard from "../MyListPageCard/MyListPageCard";
-import MyListCardListStyled from "./MyListPageCardListStyled";
+import MyListCard from "../MyListCard/MyListCard";
+import MyListCardListStyled from "./MyListCardListStyled";
 
 interface MyListCardListProps {
   films: RatedFilmData[];

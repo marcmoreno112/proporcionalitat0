@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const CardStyled = styled.li`
+const MyListCardStyled = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +18,4 @@ const CardStyled = styled.li`
   }
 `;
 
-export default CardStyled;
+export default MyListCardStyled;

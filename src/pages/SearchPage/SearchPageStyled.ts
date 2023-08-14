@@ -10,6 +10,7 @@ const SearchPageStyled = styled.main`
   .page-title {
     font-size: 3rem;
     color: ${(props) => props.theme.colors.secondary};
+    background-color: white;
   }
 
   .now-playing {

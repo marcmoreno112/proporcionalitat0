@@ -5,10 +5,12 @@ const MyListPageStyled = styled.main`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  align-items: center;
 
   .page-title {
     font-size: 3rem;
     color: ${(props) => props.theme.colors.secondary};
+    background-color: white;
   }
 `;
 

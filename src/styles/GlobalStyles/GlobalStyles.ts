@@ -11,7 +11,7 @@ body {
   background-color: white;
   max-width: 1440px;
   margin: 0 auto;
-  background-image: url("/mylist-background.svg");
+  background-image: url("/background.svg");
 }
 
 h1, h2, h3, h4, h5, h6 {

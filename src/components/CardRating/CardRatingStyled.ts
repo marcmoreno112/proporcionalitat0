@@ -15,6 +15,7 @@ const CardRatingStyled = styled.div`
   .comment {
     color: ${(props) => props.theme.colors.secondary};
     font-size: 1.3rem;
+    max-width: 60vh;
   }
 `;
 

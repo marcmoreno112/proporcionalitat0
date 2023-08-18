@@ -20,7 +20,7 @@ const SearchPageStyled = styled.main`
     @media (min-width: 1200px) {
       position: fixed;
       left: 40px;
-      transform: translate(0, 40%);
+      transform: translate(0, -10%);
     }
   }
 `;

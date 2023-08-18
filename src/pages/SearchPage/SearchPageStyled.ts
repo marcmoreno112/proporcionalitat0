@@ -10,6 +10,7 @@ const SearchPageStyled = styled.main`
   .page-title {
     font-size: 3rem;
     color: ${(props) => props.theme.colors.secondary};
+    background-color: white;
   }
 
   .now-playing {
@@ -19,7 +20,7 @@ const SearchPageStyled = styled.main`
     @media (min-width: 1200px) {
       position: fixed;
       left: 40px;
-      transform: translate(0, 40%);
+      transform: translate(0, -10%);
     }
   }
 `;

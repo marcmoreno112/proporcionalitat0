@@ -4,6 +4,7 @@ const CardTitleStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: white;
 
   .card {
     &-container {

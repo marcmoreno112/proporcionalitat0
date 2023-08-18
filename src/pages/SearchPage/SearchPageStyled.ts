@@ -16,12 +16,6 @@ const SearchPageStyled = styled.main`
   .now-playing {
     width: 350px;
     height: 250px;
-
-    @media (min-width: 1200px) {
-      position: fixed;
-      left: 40px;
-      transform: translate(0, -10%);
-    }
   }
 `;
 

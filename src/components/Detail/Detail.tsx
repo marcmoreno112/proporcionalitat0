@@ -8,7 +8,7 @@ import { FilmData, RatedFilmData } from "../../types";
 import { errorImage, imagesUrl } from "../../utils/urls";
 import titles from "../../utils/titles";
 import DetailStyled from "./DetailStyled";
-import Button from "../Button/Button";
+import TextButton from "../TextButton/TextButton";
 
 interface DetailProps {
   film: FilmData;
@@ -127,7 +127,7 @@ const Detail = ({
 
       <section className="detail-sections">
         <div className="close-button-container">
-          <Button
+          <TextButton
             actionOnClick={actionOnCloseButton}
             text="Close"
             className="close-button"
@@ -173,7 +173,7 @@ const Detail = ({
             onChange={handleCommentChange}
           />
 
-          <Button
+          <TextButton
             type="submit"
             text="Save"
             className="save-button"

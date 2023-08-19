@@ -9,7 +9,9 @@ import Detail from "../../components/Detail/Detail";
 import SearchPageCardList from "../../components/SearchPageCardList/SearchPageCardList";
 
 const SearchPage = (): React.ReactElement => {
-  window.scroll(0, 0);
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
 
   const dispatch = useAppDispatch();
 

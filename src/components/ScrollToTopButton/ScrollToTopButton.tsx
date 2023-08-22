@@ -1,9 +1,15 @@
 import ScrollToTopButtonStyled from "./ScrollToTopButtonStyled";
 
-const ScrollToTopButton = (): React.ReactElement => {
+interface ScrollToTopButtonProps {
+  actionOnClick: () => void;
+}
+
+const ScrollToTopButton = ({
+  actionOnClick,
+}: ScrollToTopButtonProps): React.ReactElement => {
   return (
     <ScrollToTopButtonStyled>
-      <button className="scroll-to-top-button">
+      <button className="scroll-to-top-button" onClick={actionOnClick}>
         <img
           src="images/arrow-up.svg"
           alt="arrow-up"

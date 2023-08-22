@@ -22,6 +22,13 @@ const SearchPage = (): React.ReactElement => {
     });
   }, []);
 
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const dispatch = useAppDispatch();
 
   const { getFilteredFilms, getNowPlayingFilms } = useFilms();
@@ -70,7 +77,7 @@ const SearchPage = (): React.ReactElement => {
 
       <Search />
 
-      {showTopButton && <ScrollToTopButton />}
+      {showTopButton && <ScrollToTopButton actionOnClick={goToTop} />}
 
       {Object.keys(detailFilm).length > 0 && <Detail film={detailFilm} />}
 

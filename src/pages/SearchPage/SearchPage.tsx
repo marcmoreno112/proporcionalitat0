@@ -14,6 +14,14 @@ const SearchPage = (): React.ReactElement => {
     window.scroll(0, 0);
   }, []);
 
+  const [showTopButton, setShowTopButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 400 ? setShowTopButton(true) : setShowTopButton(false);
+    });
+  }, []);
+
   const dispatch = useAppDispatch();
 
   const { getFilteredFilms, getNowPlayingFilms } = useFilms();
@@ -62,7 +70,7 @@ const SearchPage = (): React.ReactElement => {
 
       <Search />
 
-      <ScrollToTopButton />
+      {showTopButton && <ScrollToTopButton />}
 
       {Object.keys(detailFilm).length > 0 && <Detail film={detailFilm} />}
 

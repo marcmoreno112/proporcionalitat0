@@ -7,6 +7,7 @@ import Search from "../../components/Search/Search";
 import { useAppDispatch, useAppSelector } from "../../store";
 import Detail from "../../components/Detail/Detail";
 import SearchPageCardList from "../../components/SearchPageCardList/SearchPageCardList";
+import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
 
 const SearchPage = (): React.ReactElement => {
   useEffect(() => {
@@ -58,7 +59,10 @@ const SearchPage = (): React.ReactElement => {
   return (
     <SearchPageStyled>
       <h1 className="page-title">{titles.searchPage}</h1>
+
       <Search />
+
+      <ScrollToTopButton />
 
       {Object.keys(detailFilm).length > 0 && <Detail film={detailFilm} />}
 

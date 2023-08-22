@@ -1,29 +1,20 @@
 import { styled } from "styled-components";
 
 const ScrollToTopButtonStyled = styled.div`
-  position: relative;
+  position: fixed;
+  bottom: 40px;
+  right: 25px;
+  z-index: 20;
 
-  .scroll-to-top-button {
-    position: fixed;
-    bottom: 40px;
-    right: 25px;
-    z-index: 20;
-    background-color: #551b54;
-    border: 2px solid #fff;
+  .scroll-to-top-image {
+    border: 2px solid transparent;
     border-radius: 50%;
     height: 50px;
     width: 50px;
-    color: #fff;
+    color: blue;
     cursor: pointer;
     animation: movebtn 3s ease-in-out infinite;
     transition: all 0.5s ease-in-out;
-
-    :hover {
-      animation: none;
-      background: #fff;
-      color: #551b54;
-      border: 2px solid #551b54;
-    }
 
     @keyframes movebtn {
       0% {
@@ -41,6 +32,15 @@ const ScrollToTopButtonStyled = styled.div`
       100% {
         transform: translateY(0px);
       }
+    }
+  }
+
+  .scroll-to-top-button {
+    :hover {
+      animation: none;
+      background: #fff;
+      color: black;
+      border: 2px solid black;
     }
   }
 `;

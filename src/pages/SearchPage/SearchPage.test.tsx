@@ -15,7 +15,18 @@ describe("Given a SearchPage page", () => {
 
       expect(title).toBeInTheDocument();
     });
+
+    test("Then the ScrollToTopButton should not be rendered", () => {
+      renderWithProviders(<SearchPage />);
+
+      const expectedAlText = titles.arrowUpAltText;
+
+      const arrowUpImage = screen.queryByAltText(expectedAlText);
+
+      expect(arrowUpImage).not.toBeInTheDocument();
+    });
   });
+
   describe(`When it is rendered and the user types the text ${mockTitleText} in the search bar`, () => {
     test("Then it should show a film with the text inside its title", async () => {
       const inputText = mockTitleText;

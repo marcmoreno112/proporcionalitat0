@@ -1,3 +1,4 @@
+import titles from "../../utils/titles";
 import ScrollToTopButtonStyled from "./ScrollToTopButtonStyled";
 
 interface ScrollToTopButtonProps {
@@ -12,7 +13,7 @@ const ScrollToTopButton = ({
       <button className="scroll-to-top-button" onClick={actionOnClick}>
         <img
           src="images/arrow-up.svg"
-          alt="arrow-up"
+          alt={titles.arrowUpAltText}
           className="scroll-to-top-image"
         />
       </button>

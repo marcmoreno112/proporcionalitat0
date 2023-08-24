@@ -14,6 +14,8 @@ const Search = (): React.ReactElement => {
       const changeTitleTextAction = changeTitleTextActionCreator(searchValue);
 
       dispatch(changeTitleTextAction);
+
+      window.scroll(0, 0);
     }, 300);
 
     return () => {

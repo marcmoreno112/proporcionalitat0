@@ -7,13 +7,13 @@ import { mockTitleText } from "../../mocks/filmsMocks";
 
 describe("Given a SearchPage page", () => {
   describe("When it is rendered", () => {
-    test(`Then it should show a ${titles.searchPage} title`, () => {
-      const expectedTitle = titles.searchPage;
+    test(`Then it should show a ${titles.nowPlaying} image`, async () => {
+      const expectedAltText = titles.nowPlaying;
 
       renderWithProviders(<SearchPage />);
-      const title = screen.getByRole("heading", { name: expectedTitle });
+      const image = await screen.findByAltText(expectedAltText);
 
-      expect(title).toBeInTheDocument();
+      expect(image).toBeInTheDocument();
     });
 
     test("Then the ScrollToTopButton should not be rendered", () => {
@@ -36,7 +36,7 @@ describe("Given a SearchPage page", () => {
       renderWithProviders(<SearchPage />);
       const input = screen.getByPlaceholderText(expectedPlaceholder);
       await userEvent.type(input, inputText);
-      const title = await screen.getAllByRole("heading");
+      const title = await screen.findAllByRole("heading");
 
       expect(title[title.length - 1]).toContain(expectedTitle);
     });

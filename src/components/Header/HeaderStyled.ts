@@ -12,6 +12,7 @@ const HeaderStyled = styled.header`
     object-fit: contain;
     width: auto;
     max-height: 200px;
+    background-color: white;
   }
 `;
 

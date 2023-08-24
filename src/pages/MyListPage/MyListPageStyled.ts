@@ -12,6 +12,11 @@ const MyListPageStyled = styled.main`
     color: ${(props) => props.theme.colors.secondary};
     background-color: white;
   }
+
+  .no-rated-films-message {
+    background-color: white;
+    padding: 50px;
+  }
 `;
 
 export default MyListPageStyled;

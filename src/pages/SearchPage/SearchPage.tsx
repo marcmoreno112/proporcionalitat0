@@ -73,8 +73,6 @@ const SearchPage = (): React.ReactElement => {
 
   return (
     <SearchPageStyled>
-      <h1 className="page-title">{titles.searchPage}</h1>
-
       <Search />
 
       {showTopButton && <ScrollToTopButton actionOnClick={goToTop} />}
@@ -84,7 +82,7 @@ const SearchPage = (): React.ReactElement => {
       {titleText === "" && (
         <img
           src="images/now-playing.svg"
-          alt="now playing"
+          alt={titles.nowPlaying}
           width={350}
           height={250}
           className="now-playing"

@@ -11,6 +11,7 @@ const NavbarStyled = styled.nav`
   background-color: white;
   padding: 15px;
   border: 2px solid ${(props) => props.theme.colors.primary};
+  border-radius: 8px;
   margin: 5px;
   box-shadow: 2px 2px 10px ${(props) => props.theme.colors.primary};
 

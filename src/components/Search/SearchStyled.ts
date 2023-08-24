@@ -6,6 +6,11 @@ const SearchStyled = styled.form`
   align-items: center;
   text-align: left;
 
+  @media (min-width: 850px) {
+    position: fixed;
+    right: 20px;
+  }
+
   .input {
     padding: 18px;
     border: 3px solid ${(props) => props.theme.colors.primary};

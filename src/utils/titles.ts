@@ -1,5 +1,4 @@
 const titles = {
-  searchPage: "Search some films 🔍",
   missingPosterPath: "Missing",
   searchNotFound: "Try another words. This search has no results",
   searchInputPlaceholder: "Type a film title",
@@ -7,6 +6,7 @@ const titles = {
   emptyApiKey: "Remember to set your API key",
   myList: "Your rated films ⭐",
   notFoundPage: "This page doesn't exist",
+  nowPlaying: "Now playing",
   emptyMylist:
     "You don't have rated films yet. Please search a film and rate it",
   arrowUpAltText: "arrow up",

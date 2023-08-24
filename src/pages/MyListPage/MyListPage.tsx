@@ -38,7 +38,9 @@ const MyListPage = (): React.ReactElement => {
 
       {showTopButton && <ScrollToTopButton actionOnClick={goToTop} />}
 
-      {filmsRated.length === 0 && <h2>{titles.emptyMylist}</h2>}
+      {filmsRated.length === 0 && (
+        <h2 className="no-rated-films-message">{titles.emptyMylist}</h2>
+      )}
 
       <MyListCardList films={filmsRated} />
     </MyListPageStyled>

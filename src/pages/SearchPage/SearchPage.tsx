@@ -7,9 +7,27 @@ import Search from "../../components/Search/Search";
 import { useAppDispatch, useAppSelector } from "../../store";
 import Detail from "../../components/Detail/Detail";
 import SearchPageCardList from "../../components/SearchPageCardList/SearchPageCardList";
+import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
 
 const SearchPage = (): React.ReactElement => {
-  window.scroll(0, 0);
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
+  const [showTopButton, setShowTopButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 400 ? setShowTopButton(true) : setShowTopButton(false);
+    });
+  }, []);
+
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const dispatch = useAppDispatch();
 
@@ -56,7 +74,10 @@ const SearchPage = (): React.ReactElement => {
   return (
     <SearchPageStyled>
       <h1 className="page-title">{titles.searchPage}</h1>
+
       <Search />
+
+      {showTopButton && <ScrollToTopButton actionOnClick={goToTop} />}
 
       {Object.keys(detailFilm).length > 0 && <Detail film={detailFilm} />}
 

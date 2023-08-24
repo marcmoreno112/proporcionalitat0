@@ -6,7 +6,7 @@ interface ButtonProps {
   isDisabled?: boolean;
 }
 
-const Button = ({
+const TextButton = ({
   actionOnClick,
   text,
   className,
@@ -25,4 +25,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default TextButton;

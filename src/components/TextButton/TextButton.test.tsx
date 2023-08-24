@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
-import Button from "./Button";
+import TextButton from "./TextButton";
 import { mockTitleText } from "../../mocks/filmsMocks";
 
 describe("Given a Button component", () => {
@@ -12,7 +12,7 @@ describe("Given a Button component", () => {
       const text = mockTitleText;
 
       render(
-        <Button
+        <TextButton
           className={className}
           actionOnClick={actionOnClick}
           text={text}
@@ -31,7 +31,7 @@ describe("Given a Button component", () => {
         const text = mockTitleText;
 
         render(
-          <Button
+          <TextButton
             className={className}
             actionOnClick={actionOnClick}
             text={text}

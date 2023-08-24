@@ -9,6 +9,7 @@ const titles = {
   notFoundPage: "This page doesn't exist",
   emptyMylist:
     "You don't have rated films yet. Please search a film and rate it",
+  arrowUpAltText: "arrow up",
 };
 
 export default titles;

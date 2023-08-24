@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import titles from "../../utils/titles";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { vi } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 describe("Given a ScrollToTopButton component", () => {
   describe("When it is rendered", () => {
@@ -14,6 +15,22 @@ describe("Given a ScrollToTopButton component", () => {
       const arrowUpImage = screen.getByAltText(expectedAlText);
 
       expect(arrowUpImage).toBeInTheDocument();
+    });
+  });
+  describe("When it is rendered and the user clicks the button", () => {
+    test("Then the function of the button should be called", async () => {
+      const mockedActionOnClick = vi.fn();
+      const expectedAlText = titles.arrowUpAltText;
+
+      render(<ScrollToTopButton actionOnClick={mockedActionOnClick} />);
+
+      const scrollToTopButton = screen.getByRole("button", {
+        name: expectedAlText,
+      });
+
+      await userEvent.click(scrollToTopButton);
+
+      expect(mockedActionOnClick).toHaveBeenCalled();
     });
   });
 });

@@ -7,7 +7,7 @@ const DetailStyled = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
   opacity: 0.98;
   background-color: white;
   display: flex;

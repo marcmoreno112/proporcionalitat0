@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import titles from "../../utils/titles";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { vi } from "vitest";
 import userEvent from "@testing-library/user-event";
+import { renderWithProviders } from "../../utils/testUtils";
 
 describe("Given a ScrollToTopButton component", () => {
   describe("When it is rendered", () => {
@@ -10,7 +11,9 @@ describe("Given a ScrollToTopButton component", () => {
       const mockedActionOnClick = vi.fn();
       const expectedAlText = titles.arrowUpAltText;
 
-      render(<ScrollToTopButton actionOnClick={mockedActionOnClick} />);
+      renderWithProviders(
+        <ScrollToTopButton actionOnClick={mockedActionOnClick} />
+      );
 
       const arrowUpImage = screen.getByAltText(expectedAlText);
 
@@ -22,7 +25,9 @@ describe("Given a ScrollToTopButton component", () => {
       const mockedActionOnClick = vi.fn();
       const expectedAlText = titles.arrowUpAltText;
 
-      render(<ScrollToTopButton actionOnClick={mockedActionOnClick} />);
+      renderWithProviders(
+        <ScrollToTopButton actionOnClick={mockedActionOnClick} />
+      );
 
       const scrollToTopButton = screen.getByRole("button", {
         name: expectedAlText,

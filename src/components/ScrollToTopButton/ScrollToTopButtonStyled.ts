@@ -4,19 +4,18 @@ const ScrollToTopButtonStyled = styled.div`
   position: fixed;
   bottom: 40px;
   right: 25px;
-  z-index: 20;
+  z-index: 1;
 
   .scroll-to-top-image {
-    border: 2px solid transparent;
     border-radius: 50%;
+    border: 2px solid transparent;
     height: 50px;
     width: 50px;
-    color: blue;
     cursor: pointer;
-    animation: movebtn 3s ease-in-out infinite;
+    animation: movebutton 3s ease-in-out infinite;
     transition: all 0.5s ease-in-out;
 
-    @keyframes movebtn {
+    @keyframes movebutton {
       0% {
         transform: translateY(0px);
       }
@@ -38,9 +37,7 @@ const ScrollToTopButtonStyled = styled.div`
   .scroll-to-top-button {
     :hover {
       animation: none;
-      background: #fff;
-      color: black;
-      border: 2px solid black;
+      border: 2px solid ${(props) => props.theme.colors.primary};
     }
   }
 `;

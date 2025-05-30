@@ -12,7 +12,7 @@ interface MyListCardProps {
 const MyListCard = ({ film, isLazy }: MyListCardProps): React.ReactElement => {
   return (
     <MyListCardStyled>
-      <CardTitle releaseDate={film.release_date} title={film.title} />
+      <CardTitle title={film.title} />
 
       <CardRating comment={film.comment} rate={film.rate} />
 

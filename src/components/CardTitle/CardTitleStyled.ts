@@ -13,8 +13,8 @@ const CardTitleStyled = styled.div`
 
     &-title {
       word-wrap: break-word;
-      text-transform: uppercase;
-      font-size: 2rem;
+      /* text-transform: uppercase; */
+      /* font-size: 2rem; */
     }
 
     &-release {

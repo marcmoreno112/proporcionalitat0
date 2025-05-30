@@ -1,0 +1,168 @@
+import React, { useState } from "react";
+
+interface FractionInputProps {
+  index: number;
+  handleInputChange: (index: number, value: string) => void;
+  answered: boolean;
+  correctValues?: string[]; // Propiedad opcional
+  showCorrection?: boolean; // Propiedad opcional
+}
+
+export const Fraccion1y1: React.FC<FractionInputProps> = ({
+  index,
+  handleInputChange,
+  answered,
+  correctValues = [],
+  showCorrection = false,
+}) => {
+  const [value1, setValue1] = useState<string>("");
+  const [value2, setValue2] = useState<string>("");
+
+  const handleValue1Change = (value: string) => {
+    setValue1(value);
+    handleInputChange(index * 2, value); // Enviar el valor al padre
+  };
+
+  const handleValue2Change = (value: string) => {
+    setValue2(value);
+    handleInputChange(index * 2 + 1, value); // Enviar el valor al padre
+  };
+
+  return (
+    <div>
+      <div>
+        <input
+          type="text"
+          placeholder="?"
+          onChange={(e) => handleValue1Change(e.target.value)}
+          disabled={answered}
+          style={{
+            width: "50px",
+            textAlign: "center",
+            background: "transparent",
+          }}
+          value={showCorrection && answered ? correctValues[0] : value1} // Mostrar respuesta correcta si ya se respondió
+        />
+      </div>
+      <div
+        style={{
+          borderBottom: "1px solid black",
+          width: "50px",
+          margin: "0 auto",
+        }}
+      />
+      <div>
+        <input
+          type="text"
+          placeholder="?"
+          onChange={(e) => handleValue2Change(e.target.value)}
+          disabled={answered}
+          style={{
+            width: "50px",
+            textAlign: "center",
+            background: "transparent",
+          }}
+          value={showCorrection && answered ? correctValues[1] : value2} // Mostrar respuesta correcta si ya se respondió
+        />
+      </div>
+    </div>
+  );
+};
+
+export const Fraccion2y1: React.FC<FractionInputProps> = ({
+  index,
+  handleInputChange,
+  answered,
+  correctValues = [],
+  showCorrection = false,
+}) => {
+  const [value1, setValue1] = useState<string>("");
+  const [value2, setValue2] = useState<string>("");
+  const [value3, setValue3] = useState<string>("");
+
+  const handleValue1Change = (value: string) => {
+    setValue1(value);
+    updateResult(value, value2); // Pasar el nuevo valor y el valor actual de value2
+  };
+
+  const handleValue2Change = (value: string) => {
+    setValue2(value);
+    updateResult(value1, value); // Pasar el valor actual de value1 y el nuevo valor
+  };
+
+  const updateResult = (val1: string, val2: string) => {
+    const num1 = parseFloat(val1);
+    const num2 = parseFloat(val2);
+    if (!isNaN(num1) && !isNaN(num2)) {
+      const result = num1 * num2;
+      handleInputChange(index * 2, result.toString()); // Enviar el resultado de la multiplicación
+    }
+  };
+
+  const handleValue3Change = (value: string) => {
+    setValue3(value);
+    handleInputChange(index * 2 + 1, value); // Enviar el valor del denominador
+  };
+
+  return (
+    <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <input
+          type="text"
+          placeholder="?"
+          onChange={(e) => handleValue1Change(e.target.value)}
+          disabled={answered}
+          style={{
+            width: "40px",
+            textAlign: "center",
+            marginRight: "0px",
+            background: "transparent",
+          }}
+          value={showCorrection && answered ? correctValues[0] : value1} // Mostrar respuesta correcta si ya se respondió
+        />
+        <span style={{ fontSize: "24px", margin: "0 0px" }}>·</span>
+        <input
+          type="text"
+          placeholder="?"
+          onChange={(e) => handleValue2Change(e.target.value)}
+          disabled={answered}
+          style={{
+            width: "40px",
+            textAlign: "center",
+            marginLeft: "0px",
+            background: "transparent",
+          }}
+          value={showCorrection && answered ? correctValues[1] : value2} // Mostrar respuesta correcta si ya se respondió
+        />
+      </div>
+      <div
+        style={{
+          borderBottom: "1px solid black",
+          width: "80px",
+          margin: "0 auto",
+        }}
+      />
+      <div>
+        {/* Campo del denominador */}
+        <input
+          type="text"
+          placeholder="?"
+          onChange={(e) => handleValue3Change(e.target.value)} // Enviar el valor del denominador
+          disabled={answered}
+          style={{
+            width: "40px",
+            textAlign: "center",
+            background: "transparent",
+          }}
+          value={showCorrection && answered ? correctValues[2] : value3} // Mostrar respuesta correcta si ya se respondió
+        />
+      </div>
+    </div>
+  );
+};

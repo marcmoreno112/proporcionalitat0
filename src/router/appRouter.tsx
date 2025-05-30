@@ -2,7 +2,7 @@ import { Navigate, RouteObject, createBrowserRouter } from "react-router-dom";
 import { Suspense } from "react";
 import App from "../components/App/App";
 import paths from "./paths";
-import { LazyMyListPage, LazyNotFoundPage, LazySearchPage } from "./lazyPages";
+import { LazyMyListPage, LazyNotFoundPage } from "./lazyPages";
 
 export const routes: RouteObject[] = [
   {
@@ -11,16 +11,16 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Navigate to={`${paths.search}`} replace />,
+        element: <Navigate to={`${paths.myList}`} replace />,
       },
-      {
-        path: `${paths.search}`,
-        element: (
-          <Suspense>
-            <LazySearchPage />
-          </Suspense>
-        ),
-      },
+      // {
+      //   path: `${paths.search}`,
+      //   element: (
+      //     <Suspense>
+      //       <LazySearchPage />
+      //     </Suspense>
+      //   ),
+      // },
       {
         path: `${paths.myList}`,
         element: (

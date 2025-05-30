@@ -7,11 +7,16 @@ interface MyListCardListProps {
 }
 
 const MyListCardList = ({ films }: MyListCardListProps): React.ReactElement => {
+  // Aquí deberá ser un número aleatorio
+  const selectedQuestion = films[0];
+
   return (
     <MyListCardListStyled>
-      {films.map((film) => (
-        <MyListCard film={film} key={film.id} isLazy={"lazy"}></MyListCard>
-      ))}
+      <MyListCard
+        film={selectedQuestion}
+        key={selectedQuestion.id}
+        isLazy={"lazy"}
+      ></MyListCard>
     </MyListCardListStyled>
   );
 };

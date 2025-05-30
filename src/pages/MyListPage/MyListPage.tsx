@@ -3,11 +3,11 @@ import { useAppDispatch, useAppSelector } from "../../store";
 import { changeTitleTextActionCreator } from "../../store/films/filmsSlice";
 import titles from "../../utils/titles";
 import MyListPageStyled from "./MyListPageStyled";
-import MyListCardList from "../../components/MyListCardList/MyListCardList";
 import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
+import Question from "../../components/MyListCardList/Question";
 
 const MyListPage = (): React.ReactElement => {
-  const { filmsRated } = useAppSelector((state) => state.filmsState);
+  const { filmsRated } = useAppSelector((state) => state.proporState);
 
   const dispatch = useAppDispatch();
 
@@ -42,7 +42,7 @@ const MyListPage = (): React.ReactElement => {
         <h2 className="no-rated-films-message">{titles.emptyMylist}</h2>
       )}
 
-      <MyListCardList films={filmsRated} />
+      <Question films={filmsRated} />
     </MyListPageStyled>
   );
 };

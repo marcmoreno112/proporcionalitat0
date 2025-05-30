@@ -6,8 +6,8 @@ const MyListCardStyled = styled.li`
   align-items: center;
   justify-content: center;
   gap: 15px;
-  font-size: 1.5rem;
-  color: ${(props) => props.theme.colors.primary};
+  /* font-size: 1.5rem; */
+  /* color: ${(props) => props.theme.colors.primary}; */
   padding: 10px;
 
   .card {

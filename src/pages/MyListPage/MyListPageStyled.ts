@@ -11,6 +11,7 @@ const MyListPageStyled = styled.main`
     font-size: 3rem;
     color: ${(props) => props.theme.colors.secondary};
     background-color: white;
+    margin-top: 20px;
   }
 
   .no-rated-films-message {

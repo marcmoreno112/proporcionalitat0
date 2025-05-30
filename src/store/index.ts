@@ -5,9 +5,11 @@ import {
 } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { filmsReducer } from "./films/filmsSlice";
+import { proporReducer } from "./films/proporSlice";
 
 const rootReducer = combineReducers({
   filmsState: filmsReducer,
+  proporState: proporReducer,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {

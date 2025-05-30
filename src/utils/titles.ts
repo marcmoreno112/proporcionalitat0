@@ -4,7 +4,7 @@ const titles = {
   searchInputPlaceholder: "Type a film title",
   fetchError: "We can't show films. Try again later",
   emptyApiKey: "Remember to set your API key",
-  myList: "Your rated films ⭐",
+  myList: "Proporcionalitat",
   notFoundPage: "This page doesn't exist",
   nowPlaying: "Now playing",
   emptyMylist:

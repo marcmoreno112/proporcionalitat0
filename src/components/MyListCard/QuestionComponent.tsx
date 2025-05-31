@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface QuestionComponentProps {
   question: string;
@@ -20,6 +20,16 @@ const QuestionComponent: React.FC<QuestionComponentProps> = ({
   const [result, setResult] = useState<string>("");
   const [isResultOk, setIsResultOk] = useState<boolean>(false);
   const [answered, setAnswered] = useState<boolean>(false); // Estado para saber si la pregunta ha sido respondida
+  const [answers, setAnswers] = useState<string[]>([]); // Estado para las respuestas
+
+  useEffect(() => {
+    // Aleatorizar las respuestas al montar el componente
+    const randomizedAnswers =
+      Math.random() < 0.5
+        ? [correctAnswer, incorrectAnswer]
+        : [incorrectAnswer, correctAnswer];
+    setAnswers(randomizedAnswers);
+  }, [correctAnswer, incorrectAnswer]);
 
   const checkAnswer = (answer: string) => {
     if (answered) return; // No permitir responder si ya se ha respondido
@@ -39,20 +49,16 @@ const QuestionComponent: React.FC<QuestionComponentProps> = ({
   return (
     <div style={{ textAlign: "center" }}>
       <h3 style={{ fontWeight: "normal" }}>{question}</h3>
-      <button
-        onClick={() => checkAnswer(correctAnswer)}
-        style={buttonStyle}
-        disabled={answered}
-      >
-        {correctAnswer}
-      </button>
-      <button
-        onClick={() => checkAnswer(incorrectAnswer)}
-        style={buttonStyle}
-        disabled={answered}
-      >
-        {incorrectAnswer}
-      </button>
+      {answers.map((answer, index) => (
+        <button
+          key={index}
+          onClick={() => checkAnswer(answer)}
+          style={buttonStyle}
+          disabled={answered}
+        >
+          {answer}
+        </button>
+      ))}
       {isResultOk && (
         <p style={{ marginTop: "20px", fontSize: "18px", color: "green" }}>
           {result}

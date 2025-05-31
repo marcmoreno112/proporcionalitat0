@@ -6,17 +6,28 @@ interface MyListCardListProps {
 }
 
 const Question = ({ films }: MyListCardListProps): React.ReactElement => {
-  // Aquí deberá ser un número aleatorio
-  const selectedQuestion = films[0];
+  const seleccionarElementoAleatorio = (array: QuestionType[]) => {
+    if (array.length === 0) {
+      return undefined; // Retorna undefined si el array está vacío
+    }
+    const indiceAleatorio = Math.floor(Math.random() * array.length);
+    return array[indiceAleatorio];
+  };
+
+  const selectedQuestion = seleccionarElementoAleatorio(films);
+
+  // const selectedQuestion = films[0];
 
   return (
-    // <MyListCardListStyled>
-    <QuestionCard
-      question={selectedQuestion}
-      key={selectedQuestion.id}
-      // isLazy={"lazy"}
-    ></QuestionCard>
-    // </MyListCardListStyled>
+    <>
+      {selectedQuestion && (
+        <QuestionCard
+          question={selectedQuestion}
+          key={selectedQuestion.id}
+          // isLazy={"lazy"}
+        />
+      )}
+    </>
   );
 };
 

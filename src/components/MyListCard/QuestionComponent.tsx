@@ -6,7 +6,7 @@ interface QuestionComponentProps {
   incorrectAnswer: string;
   correctFeedback: string;
   incorrectFeedback: string;
-  onToggle: () => void; // Función para hacer toggle
+  onToggle: (isQuestionOk: boolean) => void; // Función para hacer toggle
 }
 
 const QuestionComponent: React.FC<QuestionComponentProps> = ({
@@ -28,11 +28,12 @@ const QuestionComponent: React.FC<QuestionComponentProps> = ({
     if (answer === correctAnswer) {
       setResult(correctFeedback);
       setIsResultOk(true);
+      onToggle(true);
     } else {
       setResult(incorrectFeedback);
       setIsResultOk(false);
+      onToggle(false);
     }
-    onToggle(); // Llamar a la función de toggle
   };
 
   return (

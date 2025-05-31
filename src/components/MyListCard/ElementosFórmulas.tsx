@@ -14,6 +14,7 @@ interface FractionInputProps {
   answered: boolean;
   showCorrection?: boolean;
   correctValues?: string[];
+  correctIndex?: number;
 }
 
 export const Resultado: React.FC<FractionInputProps> = ({
@@ -22,12 +23,13 @@ export const Resultado: React.FC<FractionInputProps> = ({
   answered,
   showCorrection = false,
   correctValues = [],
+  correctIndex,
 }) => {
   const [value1, setValue1] = useState<string>("");
 
   const handleValue1Change = (value: string) => {
     setValue1(value);
-    handleInputChange(index * 2, value); // Enviar el valor al padre
+    handleInputChange(correctIndex ? correctIndex : index * 2, value); // Enviar el valor al padre
   };
   return (
     <input
@@ -57,6 +59,74 @@ export const Flecha: React.FC = () => {
           }}
         >
           &#8594; {/* Flecha hacia la derecha */}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export const Ara: React.FC = () => {
+  return (
+    <div>
+      <div style={{ position: "relative", display: "inline-block" }}>
+        <span
+          style={{
+            margin: "5px 5px",
+            fontSize: "24px",
+          }}
+        >
+          Ara
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export const Abans: React.FC = () => {
+  return (
+    <div>
+      <div style={{ position: "relative", display: "inline-block" }}>
+        <span
+          style={{
+            margin: "5px 5px",
+            fontSize: "24px",
+          }}
+        >
+          Abans
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export const Mas: React.FC = () => {
+  return (
+    <div>
+      <div style={{ position: "relative", display: "inline-block" }}>
+        <span
+          style={{
+            margin: "5px 5px",
+            fontSize: "24px",
+          }}
+        >
+          +
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export const Menos: React.FC = () => {
+  return (
+    <div>
+      <div style={{ position: "relative", display: "inline-block" }}>
+        <span
+          style={{
+            margin: "5px 5px",
+            fontSize: "24px",
+          }}
+        >
+          -
         </span>
       </div>
     </div>

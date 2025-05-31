@@ -5,29 +5,9 @@ import titles from "../../utils/titles";
 import MyListPageStyled from "./MyListPageStyled";
 import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
 import Question from "../../components/MyListCardList/Question";
-import styled from "styled-components";
+import RefreshButtonStyled from "./RefreshButtonStyled";
 
 const MyListPage = (): React.ReactElement => {
-  const RefreshButton = styled.button`
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: #0056b3;
-    }
-  `;
-
   const refreshPage = () => {
     window.location.reload();
   };
@@ -69,7 +49,7 @@ const MyListPage = (): React.ReactElement => {
 
       <Question films={filmsRated} />
 
-      <RefreshButton onClick={refreshPage}>OTRO!</RefreshButton>
+      <RefreshButtonStyled onClick={refreshPage}>OTRO!</RefreshButtonStyled>
     </MyListPageStyled>
   );
 };

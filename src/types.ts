@@ -18,13 +18,24 @@ export interface Questiondata {
   feedbackIncorrecto: string;
 }
 
+export type Formula =
+  | "regla3"
+  | "regla3inversa"
+  | "aumento"
+  | "disminución"
+  | "%%"
+  | "%total"
+  | "%parcial";
+
 export interface Question {
   id: number;
   enunciado: string;
+  enunciadoFeedback: string;
   p1: Questiondata;
   p2: Questiondata;
+  p3?: Questiondata;
   fórmula: {
-    formulaType: "regla3" | "regla3inversa";
+    formulaType: Formula;
     respuestaCorrecta: string[];
   };
 }

@@ -37,5 +37,6 @@ export interface Question {
   fórmula: {
     formulaType: Formula;
     respuestaCorrecta: string[];
+    planteamientoPreFormula?: string[];
   };
 }

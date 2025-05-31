@@ -2,6 +2,7 @@ import React from "react";
 import FormulaRegla3 from "./Regla3Formula";
 import { Formula, Question } from "../../types";
 import PorcentajesYAumentosComponent from "./PorcentajesYAumentosComponent";
+import PorcentajesComponent from "./Porcentajes";
 
 interface FormulaComponentProps {
   formulaType: Formula;
@@ -38,14 +39,32 @@ const FormulaBifurcator1: React.FC<FormulaComponentProps> = ({
         />
       );
 
-    // case "%%":
-    //   return <FormulaPercent type={"%"} />;
+    case "%%":
+      return (
+        <PorcentajesComponent
+          type={"%"}
+          question={question}
+          onToggle={onToggle}
+        />
+      );
 
-    // case "%total":
-    //   return <FormulaPercent type={"total"} />;
+    case "%total":
+      return (
+        <PorcentajesComponent
+          type={"total"}
+          question={question}
+          onToggle={onToggle}
+        />
+      );
 
-    // case "%parcial":
-    //   return <FormulaPercent type={"parcial"} />;
+    case "%parcial":
+      return (
+        <PorcentajesComponent
+          type={"parcial"}
+          question={question}
+          onToggle={onToggle}
+        />
+      );
 
     default:
       return null;

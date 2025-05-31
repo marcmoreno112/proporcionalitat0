@@ -259,6 +259,120 @@ export const Fraccion2y1SinConmutativaArriba: React.FC<FractionInputProps> = ({
   );
 };
 
+export const Fraccion2y1ConDesplegables: React.FC<FractionInputProps> = ({
+  index,
+  handleInputChange,
+  answered,
+  correctValues = [],
+  showCorrection = false,
+  correctIndex,
+}) => {
+  const [value1, setValue1] = useState<string>("");
+  const [value2, setValue2] = useState<string>("");
+  const [value3, setValue3] = useState<string>("");
+
+  const options = ["%", "Part", "Total", "100"];
+
+  const handleValue1Change = (value: string) => {
+    setValue1(value);
+    handleInputChange(correctIndex ? correctIndex[0] : index * 2, value); // Enviar el valor del primer numerador
+  };
+
+  const handleValue2Change = (value: string) => {
+    setValue2(value);
+    handleInputChange(correctIndex ? correctIndex[1] : index * 2 + 1, value); // Enviar el valor del segundo numerador
+  };
+
+  const handleValue3Change = (value: string) => {
+    setValue3(value);
+    handleInputChange(correctIndex ? correctIndex[2] : index * 2 + 2, value); // Enviar el valor del denominador
+  };
+
+  return (
+    <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <select
+          onChange={(e) => handleValue1Change(e.target.value)}
+          disabled={answered}
+          value={showCorrection && answered ? correctValues[0] : value1} // Mostrar respuesta correcta si ya se respondió
+          style={{
+            width: "60px",
+            textAlign: "center",
+            marginRight: "0px",
+            background: "transparent",
+            color: "black",
+          }}
+        >
+          <option value="" disabled>
+            ...
+          </option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        <span style={{ fontSize: "24px", margin: "0 0px" }}>·</span>
+        <select
+          onChange={(e) => handleValue2Change(e.target.value)}
+          disabled={answered}
+          value={showCorrection && answered ? correctValues[1] : value2} // Mostrar respuesta correcta si ya se respondió
+          style={{
+            width: "60px",
+            textAlign: "center",
+            marginLeft: "0px",
+            background: "transparent",
+            color: "black",
+          }}
+        >
+          <option value="" disabled>
+            ...
+          </option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div
+        style={{
+          borderBottom: "1px solid black",
+          width: "80px",
+          margin: "0 auto",
+        }}
+      />
+      <div>
+        <select
+          onChange={(e) => handleValue3Change(e.target.value)} // Enviar el valor del denominador
+          disabled={answered}
+          value={showCorrection && answered ? correctValues[2] : value3} // Mostrar respuesta correcta si ya se respondió
+          style={{
+            width: "60px",
+            textAlign: "center",
+            background: "transparent",
+            color: "black",
+          }}
+        >
+          <option value="" disabled>
+            ...
+          </option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+};
 interface Fraction2y1ValoresFijosProps {
   index: number;
   numerador1: string;
@@ -291,6 +405,39 @@ export const Fraccion2y1ValoresFijos: React.FC<
       />
       <div>
         <span style={{ fontSize: "24px", margin: "0 5px" }}>{denominador}</span>
+      </div>
+    </div>
+  );
+};
+
+interface Fraccion1y1ValoresFijosProps {
+  numerador1: string;
+  numerador2: string;
+}
+
+export const Fraccion1y1ValoresFijos: React.FC<
+  Fraccion1y1ValoresFijosProps
+> = ({ numerador1, numerador2 }) => {
+  return (
+    <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <span style={{ fontSize: "24px", margin: "0 5px" }}>{numerador1}</span>
+      </div>
+      <div
+        style={{
+          borderBottom: "1px solid black",
+          width: "50px",
+          margin: "0 auto",
+        }}
+      />
+      <div>
+        <span style={{ fontSize: "24px", margin: "0 5px" }}>{numerador2}</span>
       </div>
     </div>
   );

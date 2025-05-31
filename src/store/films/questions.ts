@@ -2,6 +2,469 @@ import { Question } from "../../types";
 
 const questions: Question[] = [
   {
+    id: 57,
+    enunciado:
+      "Tu Brawler ha perdido 10 puntos de vida en una batalla. Si tenías 80 puntos de vida al inicio, ¿qué porcentaje has perdido?",
+    enunciadoFeedback: `Tu Brawler ha perdido 10 puntos de vida en una batalla. Si tenías 80 puntos de vida al inicio, ¿qué <span style="color: red;">porcentaje</span> has perdido?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto: "Incorrecto. Nos piden un %, no un antes y después.",
+    },
+    fórmula: {
+      formulaType: "%%",
+      planteamientoPreFormula: ["%", "Part", "100", "Total"],
+      respuestaCorrecta: ["10", "100", "80", "1000", "80", "12.5"],
+    },
+  },
+  {
+    id: 56,
+    enunciado:
+      "Has ganado 50 puntos de experiencia en una partida. Si comenzaste con 200 puntos de experiencia, ¿qué porcentaje representa sobre el total?",
+    enunciadoFeedback: `Has ganado 50 puntos de experiencia en una partida. Si comenzaste con 200 puntos de experiencia, ¿qué <span style="color: red;">porcentaje</span> representa sobre el total?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto: "Incorrecto. Nos piden un %, y hay un aumento.",
+    },
+    fórmula: {
+      formulaType: "%%",
+      planteamientoPreFormula: ["%", "Part", "100", "Total"],
+      respuestaCorrecta: ["50", "100", "200", "5000", "200", "25"],
+    },
+  },
+  {
+    id: 55,
+    enunciado:
+      "Tu Brawler ha perdido 15 puntos de superataque. Si tenías 75 puntos de superataque al inicio, ¿qué porcentaje has perdido?",
+    enunciadoFeedback: `Tu Brawler ha perdido 15 puntos de superataque. Si tenías 75 puntos de superataque al inicio, ¿qué <span style="color: red;">porcentaje has perdido</span>?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto: "Incorrecto. Nos piden un %, no un antes y después.",
+    },
+    fórmula: {
+      formulaType: "%%",
+      planteamientoPreFormula: ["%", "Part", "100", "Total"],
+      respuestaCorrecta: ["15", "100", "75", "1500", "75", "20"],
+    },
+  },
+  {
+    id: 54,
+    enunciado:
+      "Tu Brawler ha recogido 40 gemas en una partida. El máximo que podría haber recogido son 200 gemas, ¿qué porcentaje ha recogido sobre el total?",
+    enunciadoFeedback: `Tu Brawler ha recogido 25 gemas en una partida. El máximo que podría haber recogido son 100 gemas, ¿qué <span style="color: red;">porcentaje</span> ha recogido sobre el total?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto: "Incorrecto. Nos piden un %, y hay un aumento.",
+    },
+    fórmula: {
+      formulaType: "%%",
+      planteamientoPreFormula: ["%", "Part", "100", "Total"],
+      respuestaCorrecta: ["40", "100", "200", "4000", "200", "20"],
+    },
+  },
+  {
+    id: 53,
+    enunciado:
+      "Has perdido 40 puntos de vida en una batalla con tu Brawler. Si comenzaste con 200 puntos de vida, ¿qué porcentaje has perdido?",
+    enunciadoFeedback: `Has perdido 40 puntos de vida en una batalla con tu Brawler. Si comenzaste con 200 puntos de vida, ¿qué <span style="color: red;">porcentaje</span> has perdido?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto: "Incorrecto. Nos piden un %, no un antes y después.",
+    },
+    fórmula: {
+      formulaType: "%%",
+      planteamientoPreFormula: ["%", "Part", "100", "Total"],
+      respuestaCorrecta: ["40", "100", "200", "4000", "200", "20"],
+    },
+  },
+  {
+    id: 52,
+    enunciado:
+      "Has perdido 30 puntos de vida. Si sabemos que tenías 150 al empezar la batalla, ¿qué porcentaje has perdido?",
+    enunciadoFeedback: `Has perdido 30 puntos de vida. Si sabemos que tenías 150 al empezar la batalla, ¿qué <span style="color: red;">porcentaje</span> has perdido?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto: "Incorrecto. Nos piden un %, no un antes y después.",
+    },
+    fórmula: {
+      formulaType: "%%",
+      planteamientoPreFormula: ["%", "Part", "100", "Total"],
+      respuestaCorrecta: ["30", "100", "150", "3000", "150", "20"],
+    },
+  },
+  {
+    id: 525,
+    enunciado:
+      "Tu Brawler ha perdido 25 puntos de vida. Si sabemos que esto representa el 5% de la vida que tenía antes de la batalla, ¿cuánta vida tenía al empezar?",
+    enunciadoFeedback: `Tu Brawler ha perdido 25 puntos de vida. Si sabemos que esto representa el <span style="color: red;">5%</span> de la vida que tenía <span style="color: red;">antes</span> de la batalla, ¿cuánta vida tenía al empezar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. Estás hablando de una disminución de vida.",
+    },
+    fórmula: {
+      formulaType: "%total",
+      planteamientoPreFormula: ["Total", "Part", "100", "%"],
+      respuestaCorrecta: ["25", "100", "5", "2500", "5", "500"],
+    },
+  },
+  {
+    id: 524,
+    enunciado:
+      "Tu Brawler ha ganado 80 puntos de energía. Si sabemos que esto representa el 20% de la energía que tenía antes de la pelea, ¿cuánta energía tenía al empezar?",
+    enunciadoFeedback: `Tu Brawler ha ganado 80 puntos de energía. Si sabemos que esto representa el <span style="color: red;">20%</span> de la energía que tenía <span style="color: red;">antes</span> de la pelea, ¿cuánta energía tenía al empezar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. Estás hablando de un aumento de energía.",
+    },
+    fórmula: {
+      formulaType: "%total",
+      planteamientoPreFormula: ["Total", "Part", "100", "%"],
+      respuestaCorrecta: ["80", "100", "20", "8000", "20", "400"],
+    },
+  },
+
+  {
+    id: 523,
+    enunciado:
+      "Tu Brawler ha perdido 60 puntos de vida. Si sabemos que esto representa el 15% de la vida que tenía antes de la batalla, ¿cuánta vida tenía al empezar?",
+    enunciadoFeedback: `Tu Brawler ha perdido 60 puntos de vida. Si sabemos que esto representa el <span style="color: red;">15%</span> de la vida que tenía <span style="color: red;">antes</span> de la batalla, ¿cuánta vida tenía al empezar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. Estás hablando de una disminución de vida.",
+    },
+    fórmula: {
+      formulaType: "%total",
+      planteamientoPreFormula: ["Total", "Part", "100", "%"],
+      respuestaCorrecta: ["60", "100", "15", "6000", "15", "400"],
+    },
+  },
+  {
+    id: 522,
+    enunciado:
+      "Tu Brawler ha ganado 50 puntos de energía. Si sabemos que esto representa el 10% de la energía que tenía antes de la pelea, ¿cuánta energía tenía al empezar?",
+    enunciadoFeedback: `Tu Brawler ha ganado 50 puntos de energía. Si sabemos que esto representa el <span style="color: red;">10%</span> de la energía que tenía <span style="color: red;">antes</span> de la pelea, ¿cuánta energía tenía al empezar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. Estás hablando de un aumento de energía.",
+    },
+    fórmula: {
+      formulaType: "%total",
+      planteamientoPreFormula: ["Total", "Part", "100", "%"],
+      respuestaCorrecta: ["50", "100", "10", "5000", "10", "500"],
+    },
+  },
+  {
+    id: 521,
+    enunciado:
+      "Tu Brawler ha perdido 40 puntos de energía. Si sabemos que ha perdido el 25% de la energía que tenía antes de la pelea, ¿cuánta energía tenía al empezar?",
+    enunciadoFeedback: `Tu Brawler ha perdido 40 puntos de energía. Si sabemos que ha perdido el <span style="color: red;">25%</span> de la energía que tenía <span style="color: red;">antes</span> de la pelea, ¿cuánta energía tenía al empezar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. NO te están preguntando cuánta energía queda DESPUÉS. Preguntan cuánta había ANTES y te dan los puntos que pierdes.",
+    },
+    fórmula: {
+      formulaType: "%total",
+      planteamientoPreFormula: ["Total", "Part", "100", "%"],
+      respuestaCorrecta: ["40", "100", "25", "4000", "25", "160"],
+    },
+  },
+  {
+    id: 520,
+    enunciado:
+      "Has perdido 30 puntos de vida. Si sabemos que has perdido el 20% de los que tenías antes de la batalla, ¿cuántos puntos tenías al empezar?",
+    enunciadoFeedback: `Has perdido 30 puntos de vida. Si sabemos que has perdido el <span style="color: red;">20%</span> de los que tenías <span style="color: red;">antes</span> de la batalla, ¿cuántos puntos tenías al empezar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. NO te están preguntando cuántos puntos de vida quedan DESPUÉS. Preguntan los que había ANTES y te dan los que pierdes.",
+    },
+    fórmula: {
+      formulaType: "%total",
+      planteamientoPreFormula: ["Total", "Part", "100", "%"],
+      respuestaCorrecta: ["30", "100", "20", "3000", "20", "150"],
+    },
+  },
+  {
+    id: 514,
+    enunciado:
+      "Eres un Brawler con 2500 puntos de vida. Si un ataque enemigo te hace perder un 20% de tu vida, ¿cuánto perderías?",
+    enunciadoFeedback: `Eres un Brawler con 2500 puntos de vida. Si un ataque enemigo te hace perder un <span style="color: red;">20%</span> de tu vida, ¿cuánto perderías?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. No te están preguntando cuántos puntos de vida quedan DESPUÉS. Preguntan los que pierdes.",
+    },
+    fórmula: {
+      formulaType: "%parcial",
+      planteamientoPreFormula: ["Part", "%", "Total", "100"],
+      respuestaCorrecta: ["20", "2500", "100", "50000", "100", "500"],
+    },
+  },
+  {
+    id: 515,
+    enunciado:
+      "Eres un Brawler con 3000 puntos de vida. Si un ataque especial te hace perder un 35% de tu vida, ¿cuánto perderías?",
+    enunciadoFeedback: `Eres un Brawler con 3000 puntos de vida. Si un ataque especial te hace perder un <span style="color: red;">35%</span> de tu vida, ¿cuánto perderías?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. No te están preguntando cuántos puntos de vida quedan DESPUÉS. Preguntan los que pierdes.",
+    },
+    fórmula: {
+      formulaType: "%parcial",
+      planteamientoPreFormula: ["Part", "%", "Total", "100"],
+      respuestaCorrecta: ["35", "3000", "100", "105000", "100", "1050"],
+    },
+  },
+  {
+    id: 513,
+    enunciado:
+      "Eres un Brawler con 1800 puntos de vida. Si un enemigo te lanza un ataque que te hace perder un 15% de tu vida, ¿cuánto perderías?",
+    enunciadoFeedback: `Eres un Brawler con 1800 puntos de vida. Si un enemigo te lanza un ataque que te hace perder un <span style="color: red;">15%</span> de tu vida, ¿cuánto perderías?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. No te están preguntando cuántos puntos de vida quedan DESPUÉS. Preguntan los que pierdes.",
+    },
+    fórmula: {
+      formulaType: "%parcial",
+      planteamientoPreFormula: ["Part", "%", "Total", "100"],
+      respuestaCorrecta: ["15", "1800", "100", "27000", "100", "270"],
+    },
+  },
+  {
+    id: 512,
+    enunciado:
+      "Eres un Brawler con 2000 puntos de vida. Si un ataque especial te hace perder un 40% de tu vida, ¿cuánto perderías?",
+    enunciadoFeedback: `Eres un Brawler con 2000 puntos de vida. Si un ataque especial te hace perder un <span style="color: red;">40%</span> de tu vida, ¿cuánto perderías?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. No te están preguntando cuántos puntos de vida quedan DESPUÉS. Preguntan los que pierdes.",
+    },
+    fórmula: {
+      formulaType: "%parcial",
+      planteamientoPreFormula: ["Part", "%", "Total", "100"],
+      respuestaCorrecta: ["40", "2000", "100", "80000", "100", "800"],
+    },
+  },
+  {
+    id: 510,
+    enunciado:
+      "Eres un Brawler con 1500 puntos de vida. Si un enemigo te ataca y te hace perder un 25% de tu vida, ¿cuánto perderías?",
+    enunciadoFeedback: `Eres un Brawler con 1500 puntos de vida. Si un enemigo te ataca y te hace perder un <span style="color: red;">25%</span> de tu vida, ¿cuánto perderías?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. No te están preguntando cuántos puntos de vida quedan DESPUÉS. Preguntan los que pierdes.",
+    },
+    fórmula: {
+      formulaType: "%parcial",
+      planteamientoPreFormula: ["Part", "%", "Total", "100"],
+      respuestaCorrecta: ["25", "1500", "100", "37500", "100", "375"],
+    },
+  },
+  {
+    id: 50,
+    enunciado:
+      "Tienes 120 puntos de vida. Si te golpean en el siguiente ataque perderás un 30%. ¿Cuánto perderías?",
+    enunciadoFeedback: `Tienes 120 puntos de vida. Si te golpean en el siguiente ataque perderás un <span style="color: red;">30%</span>. ¿Cuánto perderías?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "¡Correcto! ",
+      feedbackIncorrecto: "Incorrecto. Hay un porcentaje.",
+    },
+    p2: {
+      enunciado: "¿Hay algún aumento o disminución?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "¡Correcto!",
+      feedbackIncorrecto:
+        "Incorrecto. No te están preguntando cuántos puntos de vida quedan DESPUÉS. Preguntan los que pierdes",
+    },
+    fórmula: {
+      formulaType: "%parcial",
+      planteamientoPreFormula: ["Part", "%", "Total", "100"],
+      respuestaCorrecta: ["30", "120", "100", "3600", "100", "36"],
+    },
+  },
+  {
     id: 5,
     enunciado:
       "Durante una partida de Brawl Stars, mi Brawler ha perdido un 20% de su salud tras un ataque enemigo. Si tenía 400 de salud, ¿cuánta salud le queda ahora?",

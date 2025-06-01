@@ -105,6 +105,30 @@ export const Flecha: React.FC = () => {
   );
 };
 
+export const FlechaInvertir: React.FC = () => {
+  return (
+    <div>
+      <div style={{ position: "relative", display: "inline-block" }}>
+        <span
+          style={{
+            fontSize: "24px",
+          }}
+        >
+          &#8597; {/* Flecha hacia abajo */}
+        </span>
+        <span
+          style={{
+            margin: "5px 5px",
+            fontSize: "12px",
+          }}
+        >
+          Giramos ésta fracción
+        </span>
+      </div>
+    </div>
+  );
+};
+
 export const Ara: React.FC = () => {
   return (
     <div>
@@ -116,6 +140,30 @@ export const Ara: React.FC = () => {
           }}
         >
           Ara
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export const Giramos: React.FC = () => {
+  return (
+    <div>
+      <div
+        style={{
+          position: "relative",
+          display: "inline-block",
+          width: "40px",
+          marginLeft: "5px",
+        }}
+      >
+        <span
+          style={{
+            margin: "5px 5px",
+            fontSize: "12px",
+          }}
+        >
+          Giramos 2a fracción
         </span>
       </div>
     </div>

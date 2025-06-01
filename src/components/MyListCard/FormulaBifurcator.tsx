@@ -3,6 +3,7 @@ import FormulaRegla3 from "./Regla3Formula";
 import { Formula, Question } from "../../types";
 import PorcentajesYAumentosComponent from "./PorcentajesYAumentosComponent";
 import PorcentajesComponent from "./Porcentajes";
+import FormulaRegal3Inversa from "./Regla3InversaFormula";
 
 interface FormulaComponentProps {
   formulaType: Formula;
@@ -31,8 +32,14 @@ const FormulaBifurcator1: React.FC<FormulaComponentProps> = ({
         </>
       );
 
-    // case "regla3inversa":
-    //   return <Inversa />;
+    case "regla3inversa":
+      return (
+        <FormulaRegal3Inversa
+          correctAnswer={correctAnswer}
+          onToggle={onToggle}
+          magnitudes={question.fórmula.magnitudes}
+        />
+      );
 
     case "aumento":
       return (

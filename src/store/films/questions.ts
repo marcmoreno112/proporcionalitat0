@@ -2,6 +2,89 @@ import { Question } from "../../types";
 
 const questions: Question[] = [
   {
+    id: 73,
+    enunciado:
+      "Un aventurero ha tardado 30 minutos en recolectar unas flores de cristal. Si lo hubieran hecho 3 aventureros, ¿cuánto habrían tardado?",
+    enunciadoFeedback: `Un aventurero ha tardado 30 <span style="color: red;">minutos</span> en recolectar unas flores de cristal. Si lo hubieran hecho entre 3 <span style="color: red;">aventureros</span>, ¿cuánto habrían tardado?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "No. Es inversa",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Correcto, es inversa",
+      feedbackIncorrecto: "Incorrecto. Cuantos más aventureros, MENOS tiempo",
+    },
+    fórmula: {
+      formulaType: "regla3inversa",
+      respuestaCorrecta: [
+        "1",
+        "3",
+        "30",
+        "x",
+        "x",
+        "30",
+        "1",
+        "3",
+        "x",
+        "30",
+        "30",
+        "3",
+        "30",
+        "3",
+        "10",
+      ],
+      magnitudes: ["aventureros", "minutos"],
+    },
+  },
+
+  {
+    id: 71,
+    enunciado:
+      "Un explorador ha tardado 24 minutos en encontrar un tesoro. Si lo hubieran buscado entre 3 exploradores, ¿cuánto habrían tardado?",
+    enunciadoFeedback: `Un explorador ha tardado 24 minutos en encontrar un <span style="color: red;">tesoro</span>. Si lo hubieran buscado entre 3 <span style="color: red;">exploradores</span>, ¿cuánto habrían tardado?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "No. Es inversa",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Correcto, es inversa",
+      feedbackIncorrecto: "Incorrecto. Cuantos más exploradores, MENOS tiempo",
+    },
+    fórmula: {
+      formulaType: "regla3inversa",
+      respuestaCorrecta: [
+        "1",
+        "3",
+        "24",
+        "x",
+        "x",
+        "24",
+        "1",
+        "3",
+        "x",
+        "24",
+        "24",
+        "3",
+        "24",
+        "3",
+        "8",
+      ],
+      magnitudes: ["exploradores", "minutos"],
+    },
+  },
+  {
     id: 70,
     enunciado:
       "Un explorador ha encontrado 24 tesoros usando 4 mapas. Si hubiera tenido 6 mapas, ¿cuántos tesoros habría podido encontrar?",

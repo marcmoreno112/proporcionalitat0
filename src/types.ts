@@ -38,5 +38,6 @@ export interface Question {
     formulaType: Formula;
     respuestaCorrecta: string[];
     planteamientoPreFormula?: string[];
+    magnitudes?: string[];
   };
 }

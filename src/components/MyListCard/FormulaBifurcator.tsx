@@ -20,7 +20,15 @@ const FormulaBifurcator1: React.FC<FormulaComponentProps> = ({
   switch (formulaType) {
     case "regla3":
       return (
-        <FormulaRegla3 correctAnswer={correctAnswer} onToggle={onToggle} />
+        <>
+          {/* {question.fórmula.magnitudes && ( */}
+          <FormulaRegla3
+            correctAnswer={correctAnswer}
+            onToggle={onToggle}
+            magnitudes={question.fórmula.magnitudes}
+          />
+          {/* )} */}
+        </>
       );
 
     // case "regla3inversa":

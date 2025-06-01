@@ -2,6 +2,228 @@ import { Question } from "../../types";
 
 const questions: Question[] = [
   {
+    id: 70,
+    enunciado:
+      "Un explorador ha encontrado 24 tesoros usando 4 mapas. Si hubiera tenido 6 mapas, ¿cuántos tesoros habría podido encontrar?",
+    enunciadoFeedback: `Un explorador ha encontrado 24 <span style="color: red;">tesoros</span> usando 4 <span style="color: red;">mapas</span>. Si hubiera tenido 6 mapas, ¿cuántos tesoros habría podido encontrar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "Correcto",
+      feedbackIncorrecto:
+        "Incorrecto. Cuanto más mapas tiene, más tesoros puede encontrar",
+    },
+    fórmula: {
+      formulaType: "regla3",
+      respuestaCorrecta: ["24", "x", "4", "6", "144", "4", "144", "4", "36"],
+      magnitudes: ["tesoros", "mapas"],
+    },
+  },
+  {
+    id: 69,
+    enunciado:
+      "Un herrero ha forjado 12 escudos usando 3 lingotes de metal. Si hubiera tenido 5 lingotes de metal, ¿cuántos escudos habría podido forjar?",
+    enunciadoFeedback: `Un herrero ha forjado 12 <span style="color: red;">escudos</span> usando 3 <span style="color: red;">lingotes de metal</span>. Si hubiera tenido 5 lingotes de metal, ¿cuántos escudos habría podido forjar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "Correcto",
+      feedbackIncorrecto:
+        "Incorrecto. Cuanto más lingotes tiene, más escudos puede forjar",
+    },
+    fórmula: {
+      formulaType: "regla3",
+      respuestaCorrecta: ["12", "x", "3", "5", "60", "3", "60", "3", "20"],
+      magnitudes: ["escudos", "lingotes"],
+    },
+  },
+  {
+    id: 68,
+    enunciado:
+      "Una chef ha cocinado 30 platos usando 2 botes de tomate. Si hubiera tenido 5 botes de tomate, ¿cuántos platos habría podido cocinar?",
+    enunciadoFeedback: `Una chef ha cocinado 30 <span style="color: red;">platos</span> usando <span style="color: red;">2 botes</span> de tomate. Si hubiera 5 botes de tomate, ¿cuántos platos habría podido cocinar?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "Correcto",
+      feedbackIncorrecto:
+        "Incorrecto. Cuanto más ingredientes tiene, más platos puede cocinar",
+    },
+    fórmula: {
+      formulaType: "regla3",
+      respuestaCorrecta: ["30", "x", "2", "5", "150", "2", "150", "2", "75"],
+      magnitudes: ["platos", "botes"],
+    },
+  },
+  {
+    id: 65,
+    enunciado:
+      "Un alquimista tiene 50 unidades de hierba de fuego y puede crear 25 pociones de curación con ellas. Si hubiera tenido 60 unidades de hierbas, ¿cuántas pociones de curación habría podido crear?",
+    enunciadoFeedback: `Un alquimista tiene 50 <span style="color: red;">unidades de hierba de fuego</span> y puede crear 25 <span style="color: red;">pociones de curación</span> con ellas. Si hubiera tenido 60 unidades de hierbas, ¿cuántas pociones de curación habría podido crear?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "Correcto",
+      feedbackIncorrecto:
+        "Incorrecto. Cuantas más hierbas tiene, más pociones puedes crear",
+    },
+    fórmula: {
+      formulaType: "regla3",
+      respuestaCorrecta: [
+        "50",
+        "60",
+        "25",
+        "x",
+        "1500",
+        "50",
+        "1500",
+        "50",
+        "30",
+      ],
+      magnitudes: ["hierbas de fuego", "pociones"],
+    },
+  },
+  {
+    id: 62,
+    enunciado:
+      "La aventurera ha recolectado 45 flores de un total de 50 en una misión. Si la misión hubiera sido para recolectar 60 flores y la aventurera hubiera mantenido el mismo ritmo, ¿cuántas flores habría recolectado?",
+    enunciadoFeedback: `La aventurera ha recolectado 45 <span style="color: red;">flores</span> de un <span style="color: red;">total</span> de 50 en una misión. Si la misión hubiera sido para recolectar 60 flores y la aventurera hubiera mantenido el mismo ritmo, ¿cuántas flores habría recolectado?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "Correcto. No hay que invertir ninguna magnitud",
+      feedbackIncorrecto:
+        "Incorrecto. Cuanto más sube el total de flores, más sube la cantidad recolectada",
+    },
+    fórmula: {
+      formulaType: "regla3",
+      respuestaCorrecta: [
+        "45",
+        "x",
+        "50",
+        "60",
+        "2700",
+        "50",
+        "2700",
+        "50",
+        "54",
+      ],
+      magnitudes: ["flores recolectadas", "flores totales"],
+    },
+  },
+  {
+    id: 61,
+    enunciado:
+      "El aventurero ha recolectado 72 fragmentos de cristal de un total de 80 en una misión. Si la misión hubiera sido para recolectar 90 fragmentos y el aventurero hubiera mantenido el mismo ritmo, ¿cuántos fragmentos de cristal habría recolectado?",
+    enunciadoFeedback: `El aventurero ha recolectado 72 <span style="color: red;">fragmentos de cristal</span> de un <span style="color: red;">total</span> de 80 en una misión. Si la misión hubiera sido para recolectar 90 fragmentos y el aventurero hubiera mantenido el mismo ritmo, ¿cuántos fragmentos de cristal habría recolectado?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "Correcto",
+      feedbackIncorrecto:
+        "Incorrecto. Cuanto más sube el total de fragmentos, más sube la cantidad recolectada",
+    },
+    fórmula: {
+      formulaType: "regla3",
+      respuestaCorrecta: [
+        "72",
+        "x",
+        "80",
+        "90",
+        "6480",
+        "80",
+        "6480",
+        "80",
+        "81",
+      ],
+      magnitudes: ["recolectados", "totales"],
+    },
+  },
+  {
+    id: 58,
+    enunciado:
+      "Un estudiante ha sacado 85 puntos sobre un total de 90 en un examen. ¿Cuánto sería su calificación si el examen se hubiera realizado sobre 10 puntos?",
+    enunciadoFeedback: `Un estudiante ha sacado 85 <span style="color: red;">puntos</span> sobre un <span style="color: red;">total</span> de 90 en un examen. ¿Cuánto sería su calificación si el examen se hubiera realizado sobre 10 <span style="color: red;">puntos</span>?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "Sí",
+      respuestaIncorrecta: "No",
+      feedbackCorrecto: "Correcto",
+      feedbackIncorrecto:
+        "Incorrecto. Cuanto más subimos la nota máxima, más sube la nota sacada",
+    },
+    fórmula: {
+      formulaType: "regla3",
+      respuestaCorrecta: [
+        "85",
+        "x",
+        "90",
+        "10",
+        "850",
+        "90",
+        "850",
+        "90",
+        "9.44",
+      ],
+      magnitudes: ["parciales", "totales"],
+    },
+  },
+  {
     id: 57,
     enunciado:
       "Tu Brawler ha perdido 10 puntos de vida en una batalla. Si tenías 80 puntos de vida al inicio, ¿qué porcentaje has perdido?",
@@ -1018,41 +1240,6 @@ const questions: Question[] = [
         "60",
         "30",
         "90",
-      ],
-    },
-  },
-  {
-    id: 2,
-    enunciado:
-      "Un estudiante ha sacado 85 puntos sobre un total de 90 en un examen. ¿Cuánto sería su calificación si el examen se hubiera realizado sobre 10 puntos?",
-    enunciadoFeedback: `Un estudiante ha sacado 85 <span style="color: red;">puntos</span> sobre un <span style="color: red;">total</span> de 90 en un examen. ¿Cuánto sería su calificación si el examen se hubiera realizado sobre 10 <span style="color: red;">puntos</span>?`,
-    p1: {
-      enunciado: "¿Es un problema de porcentajes?",
-      respuestaCorrecta: "No",
-      respuestaIncorrecta: "Sí",
-      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
-      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
-    },
-    p2: {
-      enunciado: "¿Es proporcionalidad directa?",
-      respuestaCorrecta: "Sí",
-      respuestaIncorrecta: "No",
-      feedbackCorrecto: "Correcto",
-      feedbackIncorrecto:
-        "Incorrecto. Cuanto más subimos la nota máxima, más sube la nota sacada",
-    },
-    fórmula: {
-      formulaType: "regla3",
-      respuestaCorrecta: [
-        "85",
-        "90",
-        "x",
-        "10",
-        "850",
-        "90",
-        "850",
-        "90",
-        "9.44",
       ],
     },
   },

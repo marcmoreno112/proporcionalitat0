@@ -156,6 +156,28 @@ export const Mas: React.FC = () => {
   );
 };
 
+interface MagnitudProps {
+  magnitud: string;
+  color: string;
+}
+
+export const Magnitud: React.FC<MagnitudProps> = ({ magnitud, color }) => {
+  return (
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ color: color }}>
+        <span
+          style={{
+            margin: "5px 5px",
+            fontSize: "14px",
+          }}
+        >
+          {magnitud}
+        </span>
+      </div>
+    </div>
+  );
+};
+
 export const Menos: React.FC = () => {
   return (
     <div>

@@ -343,7 +343,11 @@ const FormulaRegal3Inversa: React.FC<FormulaComponentProps> = ({
                 index={5}
                 answered={answered}
                 handleInputChange={handleInputChange}
-                correctValues={[correctAnswer[10], correctAnswer[11]]}
+                correctValues={[
+                  correctAnswer[10],
+                  correctAnswer[11],
+                  correctAnswer[12],
+                ]}
                 showCorrection
               />
               <Igual />
@@ -351,7 +355,7 @@ const FormulaRegal3Inversa: React.FC<FormulaComponentProps> = ({
                 index={6}
                 handleInputChange={handleInputChange}
                 answered={answered}
-                correctValues={[correctAnswer[12], correctAnswer[13]]}
+                correctValues={[correctAnswer[13], correctAnswer[14]]}
                 showCorrection
               />
               <Igual />
@@ -359,7 +363,7 @@ const FormulaRegal3Inversa: React.FC<FormulaComponentProps> = ({
                 index={7}
                 handleInputChange={handleInputChange}
                 answered={answered}
-                correctValues={[correctAnswer[14]]}
+                correctValues={[correctAnswer[15]]}
                 showCorrection
               />
             </div>

@@ -2,6 +2,49 @@ import { Question } from "../../types";
 
 const questions: Question[] = [
   {
+    id: 74,
+    enunciado:
+      "Una grafitera ha tardado 20 días en pintar un mural. Si lo hubieran pintado entre 5 personas y todas pintaran igual de rápido, ¿cuántos días habrían tardado?",
+    enunciadoFeedback: `Una grafitera ha tardado 20 <span style="color: red;">días</span> en pintar un mural. Si lo hubieran pintado entre 5 <span style="color: red;">personas</span>y todas pintaran igual de rápido, ¿cuántos días habrían tardado?`,
+    p1: {
+      enunciado: "¿Es un problema de porcentajes?",
+      respuestaCorrecta: "No",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Entonces, vamos a hacer la regla de 3",
+      feedbackIncorrecto: "No hay ningún %. Vamos a hacer una regla de 3",
+    },
+    p2: {
+      enunciado: "¿Es proporcionalidad directa?",
+      respuestaCorrecta: "No. Es inversa",
+      respuestaIncorrecta: "Sí",
+      feedbackCorrecto: "Correcto, es inversa",
+      feedbackIncorrecto: "Incorrecto. Cuantas más personas, MENOS tiempo",
+    },
+    fórmula: {
+      formulaType: "regla3inversa",
+      respuestaCorrecta: [
+        "1",
+        "5",
+        "20",
+        "x",
+        "x",
+        "20",
+        "1",
+        "5",
+        "x",
+        "20",
+        "20",
+        "1",
+        "5",
+        "20",
+        "5",
+        "4",
+      ],
+      magnitudes: ["personas", "días"],
+    },
+  },
+
+  {
     id: 73,
     enunciado:
       "Un aventurero ha tardado 30 minutos en recolectar unas flores de cristal. Si lo hubieran hecho 3 aventureros, ¿cuánto habrían tardado?",
